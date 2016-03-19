@@ -55,15 +55,16 @@ h1, h2, h3, h4 {
     padding: 0 0 1em
 }
 
+
 .content > .container {
     margin: 0 auto 1.5em auto;
     max-width: 960px;
     padding: 0 1.25em
 }
 
-.content > .container p {
+.content > .container a {
     font-size: 1.35em;
-    margin-bottom: 1em;
+    margin: 1em;
     letter-spacing: -0.25px
 }
 
