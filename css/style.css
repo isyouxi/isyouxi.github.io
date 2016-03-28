@@ -1,7 +1,6 @@
 @charset "utf-8";
-/* Packaged at 2016/3/19. */
+/* Packaged at 2016/3/27. */
 /* Designed and developed by YouXi. */
-
 
 html, body {
     height: 100%
@@ -12,7 +11,7 @@ body, input, textarea {
     color: #69606b;
     font-size: 22px;
     line-height: 1.45;
-    font-family: 'Source Sans Light', sans-serif;
+
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden
@@ -29,9 +28,7 @@ a:hover, a:focus {
     color: #69606b
 }
 
-h1, h2, h3, h4 {
-    font-family: 'hanzo', sans-serif
-}
+
 
 *, *:after, *:before {
     box-sizing: border-box
@@ -55,8 +52,7 @@ h1, h2, h3, h4 {
     padding: 0 0 1em
 }
 
-
-.content > .container {
+/*.content > .container {
     margin: 0 auto 1.5em auto;
     max-width: 960px;
     padding: 0 1.25em
@@ -66,16 +62,16 @@ h1, h2, h3, h4 {
     font-size: 1.35em;
     margin: 1em;
     letter-spacing: -0.25px
-}
+}*/
 
-.content h2 {
+/*.content h2 {
     margin: 0;
     font-size: 2.6em
-}
+}*/
 
-.content h2 + p {
+/*.content h2 + p {
     margin-top: 0
-}
+}*/
 
 body.init {
     overflow: hidden;
@@ -255,7 +251,7 @@ body > header button.trigger span:before {
     font-weight: normal;
     font-style: normal;
     font-variant: normal;
-    font-family: 'icomoon';
+
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
@@ -342,26 +338,26 @@ body.header-fadeout.modify .header p:nth-child(2), body.header-fadeout.modify .h
     transform: translateX(0)
 }
 
-body.header-fadeout #intro {
+body.header-fadeout #navbar {
     z-index: 1000;
     position: relative
 }
 
-body.header-fadeout #intro > div {
+body.header-fadeout #navbar > div {
     opacity: 0;
     transform: translateY(350px)
 }
 
-body.header-fadeout.modify #intro > div {
+body.header-fadeout.modify #navbar > div {
     opacity: 1;
     transform: translateY(0)
 }
 
-section#intro {
+section#navbar {
     margin-top: -200px
 }
 
-section#intro h2 {
+section#navbar h2 {
     display: none
 }
 
@@ -375,7 +371,7 @@ section#travel #maps {
 }
 
 section#travel #maps h3 {
-    font-family: 'Allura', serif;
+
     font-size: 2em;
     text-align: center;
     color: #fff;
@@ -395,52 +391,8 @@ section#travel #maps h3 {
     z-index: 9999
 }
 
-section#travel #maps .jvectormap-zoomin, section#travel #maps .jvectormap-zoomout {
-    display: none
-}
 
-section#photography a i {
-    vertical-align: middle
-}
 
-section#photography a i + span {
-    vertical-align: top;
-    line-height: 1.8;
-    padding-left: 3px
-}
-
-section#photography #montage {
-    padding: 1em 10px;
-    margin-bottom: 3.5em
-}
-
-section#photography #montage img {
-    width: 100%;
-    border-radius: 3px;
-    margin-bottom: -8px;
-    transition: opacity .35s;
-    cursor: zoom-in
-}
-
-section#photography #montage img:hover {
-    opacity: .8
-}
-
-section#photography #montage img.shuffling {
-    opacity: 0
-}
-
-section#design .row {
-    margin-top: -20px;
-    margin-bottom: 4.5em
-}
-
-section#design .row img {
-    width: 100%;
-    max-width: 433px;
-    max-height: 288px;
-    border-radius: 5px
-}
 
 section#programming .row header {
     text-align: center;
@@ -477,80 +429,21 @@ section#programming .row img:hover {
     transform: scale(1.1)
 }
 
-section#programming .container > .row {
+/*section#programming .container > .row {
     max-width: 600px;
     margin: -50px auto 3.5em;
     transform: translateX(-6.5%)
-}
+}*/
 
-section#programming .column.left img {
-    width: 87%;
-    max-width: 270px;
-    max-height: 216px;
-    float: right
-}
 
-section#programming .column.right img {
-    max-width: 210px;
-    max-height: 124px
-}
+
 
 section#apple a > span {
     display: block;
     margin-top: .75em
 }
 
-section#apple img, section#more img {
-    width: 100%;
-    border-radius: 5px
-}
 
-section#more .row {
-    position: relative;
-    margin-top: 2em;
-    margin-bottom: 2em
-}
-
-section#more #video > a[data-action=play-video] {
-    position: relative;
-    display: block
-}
-
-section#more #video .icon-play {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    padding: 7px 10px;
-    border: 5px solid;
-    border-radius: 100%;
-    color: rgba(255, 255, 255, 0.95);
-    top: 50%;
-    margin-top: -30px;
-    margin-left: 50%;
-    left: -30px;
-    font-size: 34px;
-    box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.8);
-    transition: opacity .35s
-}
-
-section#more #video:hover .icon-play {
-    opacity: .8
-}
-
-section#more #player {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%
-}
-
-section#more #player > iframe {
-    display: none;
-    height: 100%;
-    width: 100%
-}
 
 section#more #player > iframe:first-child {
     display: block
@@ -582,8 +475,8 @@ section#more p.extra-links span {
 }
 
 section#say-hello {
-   <!-- background-image: url("images/nyc-background.jpg");-->
-    background-size: 100%;
+<!-- background-image: url("images/nyc-background.jpg");
+--> background-size: 100%;
     background-size: cover;
     padding-top: 3.5em;
     padding-bottom: 2.5em
@@ -698,41 +591,13 @@ body > footer {
     fill: #69606b
 }
 
-@font-face {
-    font-family: 'hanzo';
-<!--  src: url('fonts/hattori_hanzo-webfont.eot');
- src: url('fonts/hattori_hanzo-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/hattori_hanzo-webfont.woff2') format('woff2'), url('fonts/hattori_hanzo-webfont.woff') format('woff'), url('fonts/hattori_hanzo-webfont.ttf') format('truetype'), url('fonts/hattori_hanzo-webfont.svg#hattori_hanzolight') format('svg');
---> font-weight: normal;
-    font-style: normal
-}
 
-@font-face {
-    font-family: 'Allura';
-<!--src: url('fonts/allura-webfont.eot');
-    src: url('fonts/allura-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/allura-webfont.woff2') format('woff2'), url('fonts/allura-webfont.woff') format('woff'), url('fonts/allura-webfont.ttf') format('truetype'), url('fonts/allura-webfont.svg#allura') format('svg');
---> font-weight: normal;
-    font-style: normal
-}
 
-@font-face {
-    font-family: 'Source Sans Light';
-   <!-- src: url('fonts/sourcesanspro-light-webfont.eot');
-    src: url('fonts/sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sourcesanspro-light-webfont.woff2') format('woff2'), url('fonts/sourcesanspro-light-webfont.woff') format('woff'), url('fonts/sourcesanspro-light-webfont.ttf') format('truetype'), url('fonts/sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
-    -->
-    font-weight: normal;
-    font-style: normal
-}
 
-@font-face {
-    font-family: 'icomoon';
-<!-- src: url('icons/icomoon.eot?-g1zifx');
-    src: url('icons/icomoon.eot?-g1zifx#iefix') format('embedded-opentype'), url('icons/icomoon.ttf?-g1zifx') format('truetype'), url('icons/icomoon.woff?-g1zifx') format('woff'), url('icons/icomoon.svg?-g1zifx#icomoon') format('svg');
--->font-weight: normal;
-    font-style: normal
-}
+
 
 [class^="icon-"], [class*=" icon-"] {
-    font-family: 'icomoon';
+
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -877,11 +742,11 @@ html.fucking-ie body > header .title {
     max-width: none
 }
 
-html.fucking-ie section#intro {
+html.fucking-ie section#navbar {
     margin-top: 50px
 }
 
-html.fucking-ie #maps, html.fucking-ie #montage, html.fucking-ie #photography a, html.fucking-ie #back-to-top, html.fucking-ie button.trigger {
+html.fucking-ie #maps, html.fucking-ie #montage, html.fucking-ie #mian-content a, html.fucking-ie #back-to-top, html.fucking-ie button.trigger {
     display: none
 }
 
@@ -940,7 +805,7 @@ html[lang=en] body > header nav.top span.right a {
         height: 350px
     }
 
-    section#photography #montage > a {
+    section#mian-content #montage > a {
         margin-bottom: 2px
     }
 
