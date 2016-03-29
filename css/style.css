@@ -52,27 +52,6 @@ a:hover, a:focus {
     padding: 0 0 1em
 }
 
-/*.content > .container {
-    margin: 0 auto 1.5em auto;
-    max-width: 960px;
-    padding: 0 1.25em
-}
-
-.content > .container a {
-    font-size: 1.35em;
-    margin: 1em;
-    letter-spacing: -0.25px
-}*/
-
-/*.content h2 {
-    margin: 0;
-    font-size: 2.6em
-}*/
-
-/*.content h2 + p {
-    margin-top: 0
-}*/
-
 body.init {
     overflow: hidden;
     pointer-events: none
@@ -354,80 +333,42 @@ body.header-fadeout.modify #navbar > div {
 }
 
 section#navbar {
-    margin-top: -200px
+    margin-top: -200px;
+    align-content: center;
+
 }
 
 section#navbar h2 {
     display: none
 }
 
-section#travel #maps {
-    width: 100%;
-    height: 460px;
-    margin: 3.5em 0 5em;
-    padding: 2em 0 5em;
-    background-color: rgba(80, 100, 150, 0.5);
-    box-sizing: content-box
+section#mian-content p{
+    display: none
 }
 
-section#travel #maps h3 {
-
-    font-size: 2em;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 0
+.img-nav{
+    height:64px ;
+    width:64px
 }
 
-.jvectormap-label {
-    position: absolute;
-    display: none;
-    border-radius: 3px;
-    background: #292929;
-    color: #fff;
-    font-size: smaller;
-    opacity: .9;
-    padding: 6px 13px;
-    box-shadow: 20px 20px 25px 5px rgba(0, 0, 0, 0.5);
-    z-index: 9999
+.thumbnail{
+    height: 70px;
+    width: 70px;
 }
 
-
-
-
-section#programming .row header {
-    text-align: center;
-    font-size: 1.25em;
-    margin-top: 1em;
-    margin-bottom: -2em
+.thumbnail a i{
+    font-size: 64px;
 }
 
-section#programming .row a:after {
-    content: attr(data-version);
-    position: absolute
+section#navbar div{
+    margin: 0 auto;
+    padding: 0 0 1em
 }
+/*.navbar-inverse {
+    background-color: #f9f9f9;
+    border-color: #f9f9f9;
+}*/
 
-section#programming .column.left .row {
-    position: relative
-}
-
-section#programming .column.left .row a:after {
-    left: 0
-}
-
-section#programming .column.right .row a:after {
-    margin-left: 1.5em
-}
-
-section#programming .row img {
-    width: 100%;
-    border-radius: 3px;
-    transition: opacity .35s, transform .25s ease-in-out
-}
-
-section#programming .row img:hover {
-    opacity: .8;
-    transform: scale(1.1)
-}
 
 /*section#programming .container > .row {
     max-width: 600px;
@@ -437,7 +378,7 @@ section#programming .row img:hover {
 
 
 
-
+/*
 section#apple a > span {
     display: block;
     margin-top: .75em
@@ -561,7 +502,7 @@ section#contact .sns-icons {
     text-align: center;
     font-size: 2.25em;
     margin-bottom: 1.25em
-}
+}*/
 
 body > footer {
     text-align: center
@@ -591,134 +532,6 @@ body > footer {
     fill: #69606b
 }
 
-
-
-
-
-
-[class^="icon-"], [class*=" icon-"] {
-
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-.icon-arrow-down:before {
-    content: "\e600"
-}
-
-.icon-weibo:before {
-    content: "\e601"
-}
-
-.icon-wechat:before {
-    content: "\e602"
-}
-
-.icon-expand:before {
-    content: "\e604"
-}
-
-.icon-earth:before {
-    content: "\e605"
-}
-
-.icon-error:before {
-    content: "\e60e"
-}
-
-.icon-done:before {
-    content: "\e60f"
-}
-
-.icon-play:before {
-    content: "\e606"
-}
-
-.icon-shuffle:before {
-    content: "\e609"
-}
-
-.icon-facebook:before {
-    content: "\e607"
-}
-
-.icon-instagram:before {
-    content: "\e608"
-}
-
-.icon-twitter:before {
-    content: "\e60c"
-}
-
-.icon-github:before {
-    content: "\e60d"
-}
-
-.icon-apple:before {
-    content: "\e60a"
-}
-
-.icon-send:before {
-    content: "\e60b"
-}
-
-.icon-spinner:before {
-    content: "\e603"
-}
-
-.icon-spinner {
-    animation: spinning 2s infinite linear;
-    padding-top: 5px
-}
-
-#nprogress {
-    pointer-events: none
-}
-
-#nprogress .bar {
-    background-color: #cf4a5c;
-    position: fixed;
-    z-index: 1031;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px
-}
-
-#nprogress .peg {
-    display: block;
-    position: absolute;
-    right: 0;
-    width: 100px;
-    height: 100%;
-    box-shadow: 0 0 10px #cf4a5c, 0 0 5px #cf4a5c;
-    opacity: 1.0;
-    transform: rotate(3deg) translate(0px, -4px)
-}
-
-#nprogress .spinner {
-    display: block;
-    position: fixed;
-    z-index: 1031;
-    top: 15px;
-    right: 15px
-}
-
-#nprogress .spinner-icon {
-    width: 18px;
-    height: 18px;
-    box-sizing: border-box;
-    border: solid 2px transparent;
-    border-top-color: #cf4a5c;
-    border-left-color: #cf4a5c;
-    border-radius: 50%;
-    animation: spinning 500ms linear infinite
-}
 
 html.ios *[data-action=switch-fullscreen-mode] {
     display: none
@@ -769,6 +582,7 @@ html[lang=en] body > header nav.top span.right a {
     }
 }
 
+
 @media (max-width: 727px) {
     body, input, textarea {
         font-size: 20px
@@ -778,17 +592,6 @@ html[lang=en] body > header nav.top span.right a {
         font-size: 2.75em
     }
 
-    section#programming .column.left .row a:after {
-        position: relative;
-        display: block;
-        text-align: right;
-        transform: translateY(12px)
-    }
-
-    section#programming .column.right .row a:after {
-        position: relative;
-        margin-left: 0
-    }
 }
 
 @media (max-width: 535px) {
@@ -801,16 +604,4 @@ html[lang=en] body > header nav.top span.right a {
         font-size: 2.25em
     }
 
-    section#travel #maps {
-        height: 350px
-    }
-
-    section#mian-content #montage > a {
-        margin-bottom: 2px
-    }
-
-    section#programming .row header {
-        margin-top: 1.75em;
-        margin-bottom: -0.75em
-    }
 }
