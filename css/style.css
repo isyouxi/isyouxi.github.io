@@ -6,6 +6,15 @@ html, body {
     height: 100%
 }
 
+body {
+    background: #FFF;
+    font-family: Georgia, Times New Roman, Times, serif;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
 body, input, textarea {
     background: #fff;
     color: #69606b;
@@ -243,7 +252,7 @@ body > header body:not(.no-trans) button.trigger {
 body.modify:not(.no-trans) > header button.trigger {
     opacity: 0;
     pointer-events: none;
-    transition-delay: 0;
+    transition-delay: 0s;
 }
 
 body.header-fadeout:not(.no-trans) .header-background {
@@ -333,7 +342,7 @@ body.header-fadeout.modify #navbar > div {
 }
 
 section#navbar {
-    margin-top: -200px;
+    margin-top: -100px;
     align-content: center;
 
 }
@@ -360,6 +369,17 @@ section#mian-content p{
     font-size: 64px;
 }
 
+.scrollblock {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.block-create {
+    background-color: #348fd4;
+}
 section#navbar div{
     margin: 0 auto;
     padding: 0 0 1em
