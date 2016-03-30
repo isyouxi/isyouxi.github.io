@@ -381,148 +381,9 @@ section#mian-content p{
     background-color: #348fd4;
 }
 section#navbar div{
-    margin: 0 auto;
-    padding: 0 0 1em
+    margin: 0 ;
+    padding: 0 0 0
 }
-/*.navbar-inverse {
-    background-color: #f9f9f9;
-    border-color: #f9f9f9;
-}*/
-
-
-/*section#programming .container > .row {
-    max-width: 600px;
-    margin: -50px auto 3.5em;
-    transform: translateX(-6.5%)
-}*/
-
-
-
-/*
-section#apple a > span {
-    display: block;
-    margin-top: .75em
-}
-
-
-
-section#more #player > iframe:first-child {
-    display: block
-}
-
-section#more .description h3 {
-    font-size: 1.35em;
-    margin-bottom: .25em
-}
-
-section#more .description p {
-    font-size: .9em;
-    line-height: 1.25;
-    letter-spacing: 0
-}
-
-section#more .description span {
-    font-size: .75em;
-    opacity: .75
-}
-
-section#more p.extra-links {
-    text-align: center;
-    font-size: .85em
-}
-
-section#more p.extra-links span {
-    margin: .5em
-}
-
-section#say-hello {
-<!-- background-image: url("images/nyc-background.jpg");
---> background-size: 100%;
-    background-size: cover;
-    padding-top: 3.5em;
-    padding-bottom: 2.5em
-}
-
-section#say-hello #comment input, section#say-hello #comment textarea {
-    width: 100%;
-    padding: .75em;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #fdfdfd;
-    background-color: rgba(255, 255, 255, 0.8);
-    transition: background-color .5s
-}
-
-section#say-hello #comment.completed input, section#say-hello #comment.completed textarea {
-    background-color: rgba(255, 255, 255, 0.25)
-}
-
-section#say-hello #comment button {
-    display: block;
-    margin: auto;
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    border: 2px solid;
-    border-color: #eaeaea #eee #fff;
-    background-color: rgba(255, 255, 255, 0.85);
-    -webkit-appearance: none;
-    font-size: 32px;
-    padding-right: 10px;
-    color: rgba(0, 0, 0, 0.65);
-    cursor: pointer;
-    transition: background-color .5s
-}
-
-section#say-hello #comment button:hover {
-    background-color: rgba(255, 255, 255, 0.5)
-}
-
-section#say-hello #comment.completed button {
-    background-color: rgba(180, 230, 110, 0.75)
-}
-
-section#say-hello #comment.wrong button {
-    background-color: rgba(230, 110, 110, 0.75)
-}
-
-section#say-hello #comment button .icon-spinner {
-    margin-left: 3px;
-    line-height: 1.5
-}
-
-section#say-hello #comment button .icon-done {
-    line-height: 1.25;
-    margin-left: 5px
-}
-
-section#say-hello #comment button .icon-error {
-    line-height: 1.5;
-    margin-left: 5px
-}
-
-section#contact {
-    padding-top: 3.5em
-}
-
-section#contact p ~ a {
-    display: block;
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 1em
-}
-
-section#contact h3 {
-    text-align: center;
-    font-size: 1.25em;
-    margin-top: 2em
-}
-
-section#contact .sns-icons {
-    text-align: center;
-    font-size: 2.25em;
-    margin-bottom: 1.25em
-}*/
 
 body > footer {
     text-align: center
@@ -552,6 +413,9 @@ body > footer {
     fill: #69606b
 }
 
+.row-4 {
+    width: 25%;
+}
 
 html.ios *[data-action=switch-fullscreen-mode] {
     display: none
@@ -611,8 +475,16 @@ html[lang=en] body > header nav.top span.right a {
     body > header .title h1 {
         font-size: 2.75em
     }
-
+    .thumbnail{
+        height: 48px;
+        width: 48px;
+    }
+    .thumbnail a i{
+        font-size: 48px;
+    }
 }
+
+
 
 @media (max-width: 535px) {
     body, input, textarea {
@@ -623,5 +495,11 @@ html[lang=en] body > header nav.top span.right a {
     body > header .title h1 {
         font-size: 2.25em
     }
-
+    .thumbnail a i{
+        font-size: 32px;
+    }
+    .thumbnail{
+        height: 32px;
+        width: 32px;
+    }
 }
