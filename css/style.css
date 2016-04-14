@@ -369,9 +369,9 @@ section#mian-content p{
     font-size: 64px;
 }
 
-.scrollblock {
+.statements {
     position: relative;
-    margin: 0;
+    margin-top: 30px;
     width: 100%;
     color: white;
     padding-top: 80px;
