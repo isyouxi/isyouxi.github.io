@@ -371,11 +371,26 @@ section#mian-content p{
 
 .statements {
     position: relative;
-    margin-top: 30px;
+    margin: 0;
     width: 100%;
     color: white;
     padding-top: 80px;
     padding-bottom: 80px;
+}
+
+.statements h2{
+    font-size: 38px;
+}
+
+.statements p{
+    font-size: 26px;
+}
+.page-responsive .columns {
+    margin-right: -20px;
+    margin-left: -20px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #767676;
 }
 .block-create {
     background-color: #348fd4;
@@ -466,6 +481,16 @@ html[lang=en] body > header nav.top span.right a {
     }
 }
 
+@media (min-width: 760px){
+    .columns-vertically-centered.columns-reverse {
+        direction: rtl;
+    }
+
+    .columns-vertically-centered {
+        display: table;
+        table-layout: fixed;
+    }
+}
 
 @media (max-width: 727px) {
     body, input, textarea {
