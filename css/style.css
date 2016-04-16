@@ -168,6 +168,10 @@ body > header .title h1 {
     margin: 0 auto
 }
 
+.title h1{
+    font-family: 'Verdana';
+}
+
 body > header .title p {
     color: #fff;
     padding: 0 0 .6em;
@@ -373,18 +377,25 @@ section#mian-content p{
     position: relative;
     margin: 0;
     width: 100%;
-    color: white;
+    color: #FFCCCC;
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
 .statements h2{
     font-size: 38px;
+    font-family:'Trebuchet MS';
 }
 
 .statements p{
     font-size: 26px;
+    font-family:'ljsh2c36a5c3651a1';
 }
+
+.subline{
+    font-family:'ljsh2c36a5c3651a1';
+}
+
 .page-responsive .columns {
     margin-right: -20px;
     margin-left: -20px;
@@ -393,7 +404,7 @@ section#mian-content p{
     color: #767676;
 }
 .block-create {
-    background-color: #348fd4;
+   <!-- background-color: #348fd4;-->
 }
 section#navbar div{
     margin: 0 ;
