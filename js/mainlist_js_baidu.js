@@ -7,6 +7,7 @@ function init() {
     map.centerAndZoom(point, 15); // 初始化地图，设置中心点坐标和地图级别
 
     getLocation();
+    loadXMLDoc();
 }
 
 
@@ -44,6 +45,53 @@ function locationError(err) {
     console.log('ERROR(' + err.code + '): ' + err.message);
 }
 
+
+function loadXMLDoc() {
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            // document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            showJSON(xmlhttp.responseText);
+        }
+    }
+    xmlhttp.open("GET", "../../file/test1.txt", true);
+    xmlhttp.send();
+
+
+}
+
+
+function showJSON(infos) {
+    var jsonOb = JSON.parse(infos);
+    console.log(jsonOb.title);
+    console.log(jsonOb.signing[0].author.title);
+    console.log(jsonOb.signing[1].book.title);
+    console.log(jsonOb.signing[1].avatar_large);
+
+    /*<li class="table-view-cell media">
+     <a class="navigate-right">
+     <img class="media-object pull-left" src="http://placehold.it/42x42">
+     <div class="media-body">
+     Item 1
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+     labore et dolore. Lorem ipsum dolor sit amet.</p>
+     </div>
+     </a>
+     </li>*/
+
+
+    for (var i = 0; i < jsonOb.signing.length; i++) {
+        $(".table-view").append("<li class='table-view-cell media' ><a class ='navigate-right'><img class ='media-object pull-left' width='42px' height='42px' src='" + jsonOb.signing[i].avatar_large + "'><div class ='media-body'>" + jsonOb.signing[i].author.title + "<p>" + jsonOb.signing[i].book.title + "</p> </div> </a> </li>");
+    }
+
+
+}
 
 
 
