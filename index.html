@@ -1,125 +1,59 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youxi·Blog</title>
+    <title>Ratchet template page</title>
 
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
-    <!-- jQuery -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <script src="js/application.js"></script>
-    <![endif]-->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- self -->
-    <link rel="stylesheet" href="css/style.css"/>
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="ratchet/dist/css/ratchet.css" rel="stylesheet">
 
-    <!-- font -->
-    <link href='http://api.youziku.com/webfont/CSS/5711fc2ef629d80bd40ed856' rel='stylesheet' type='text/css' />
-    <!-- Loading Flat UI -->
-    <link rel="stylesheet" href="css/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/vendor/bootstrap/css/font-awesome.min.css">
-    <link href="css/flat-ui.css" rel="stylesheet">
-    <!--<link href="docs/assets/css/demo.css" rel="stylesheet">-->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/dandyweng_skel.min.js"></script>
-
-    <!--字体-->
-    <link href='http://api.youziku.com/webfont/CSS/56fa94e6f629d80cd8070b48' rel='stylesheet' type='text/css' />
+    <!-- Include the compiled Ratchet JS -->
+    <script src="ratchet/dist/js/ratchet.js"></script>
 </head>
-<body id="body" class="init header-fadeout">
-<header class="header">
-    <div class="header-background">
-        <img id="back-sticker" src="http://img.zcool.cn/community/focus/092b56eb6c200000012a4c2bb9f2.jpg"/>
-    </div>
-    <div class="title">
-        <h1>Im'YouXi</h1>
-        <p class="subline">This is my personal blog.</p>
-    </div>
-    <!--<button class="trigger" data-info="Click it up"><i class="icon-angle-down" style="font-size: 48px"></i></button>-->
+<body>
 
+<!-- Make sure all your bars are the first things in your <body> -->
+<header class="bar bar-nav">
+    <h1 class="title">Ratchet</h1>
 </header>
- <!--<section id="navbar" class="container projects">
 
-    <div class="row" style="margin:0 auto;width: 70%">
-        <div class="  row-4">
-            <div class="thumbnail " style="border: 0px solid;
-    background-color:rgba(0,0,0,0); margin:0 auto" >
-                <a href="#" title="nav_home" target="_blank"><i class="icon-desktop"></i></a>
-            </div>
-        </div>
-
-        <div class=" row-4">
-            <div class="thumbnail" style="border: 0px solid;
-    background-color:rgba(0,0,0,0);margin:0 auto">
-                <a href="#" title="nav_normal"><i class="icon-mobile-phone"></i></a>
-            </div>
-        </div>
-
-        <div class=" row-4">
-            <div class="thumbnail" style="border: 0px solid;
-    background-color:rgba(0,0,0,0);margin:0 auto">
-                <a href="#" title="nav_misc" ><i class="icon-suitcase"></i></a>
-            </div>
-        </div>
-
-
-        <div class=" row-4">
-            <div class="thumbnail" style="border: 0px solid;
-    background-color:rgba(0,0,0,0);margin:0 auto">
-                <a href="#" title="nav_aboutme" ><i class="icon-github-alt"></i></a>
-            </div>
-        </div>
+<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+<div class="content">
+    <p class="content-padded">Thanks for downloading Ratchet. This is an example HTML page that's linked up to compiled
+        Ratchet CSS and JS, has the proper meta tags and the HTML structure. Need some more help before you start
+        filling this with your own content? Check out some Ratchet resources:</p>
+    <div class="card">
+        <ul class="table-view">
+            <li class="table-view-cell">
+                <a class="push-right" href="http://goratchet.com">
+                    <strong>Ratchet documentation</strong>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="push-right" href="https://github.com/twbs/ratchet/">
+                    <strong>Ratchet on Github</strong>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="push-right" href="https://groups.google.com/forum/#!forum/goratchet">
+                    <strong>Ratchet Google group</strong>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="push-right" href="https://twitter.com/goratchet">
+                    <strong>Ratchet on Twitter</strong>
+                </a>
+            </li>
+        </ul>
     </div>
-
-
-</section>-->
-
-<div class="statements block-create " style="margin-top: 30px;">
-    <h2>Hello</h2>
-    <p>
-        一切从Say Hello 开始 。
-    </p>
 </div>
 
-<!--<div class="frontendtoc block-create" style="margin-top: 30px;">
-    <p><strong>Android</strong> 相关 </p>
-    <ul><li>Android 是基于Linux平台的开源的操作系统</li>
-        <li><strong><a href="https://developer.android.com/intl/zh-cn/index.html" target="_blank">Android Developers</a></strong> -  这是Android开发者的官方网站(需要科学上网)。   </li>
-    </ul>
-
-
-    <ul>
-        <li>文章1</li>
-        <li>文章2</li>
-        <li>文章3</li>
-    </ul>
-</div>-->
-<!--<div class="statements columns columns-vertically-centered columns-reverse">
-    <div class="one-half column text-center">
-        <img src="https://assets-cdn.github.com/images/modules/site/personal-ill-see.png?sn1" alt="" class="featurette-illo img-responsive">
-    </div>
-    <div class="one-half column column-spacious-right">
-        <h3 class="display-heading-3">See what people are working on</h3>
-        <p>Follow friends or developers you admire to learn what they are working on.</p>
-    </div>
-</div>-->
-
-
-<!--<script src="css/vendor/jquery.min.js"></script>
-<script src="css/vendor/video.js"></script>-->
-
-<script src="js/flat-ui.min.js"></script>
-<!-- 这两个就是放在后面的-->
-<script src="js/dandyweng_plugins.js"></script>
-<script src="js/dandyweng_scripts.min.js"></script>
 </body>
 </html>
