@@ -5,3 +5,9 @@
 .bar {
     background-color: #ffc737;
 }
+
+#button {
+    width: 50px;
+    height: 20px;
+    background-color: #1a9bcb;
+}
