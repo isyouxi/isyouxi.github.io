@@ -18,8 +18,9 @@
     <!-- Include the compiled Ratchet JS -->
     <script src="ratchet/dist/js/ratchet.js"></script>
     <script src="js/myjs.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=209230fd3263f63827aa40ae65522c5b"></script>
 </head>
-<body>
+<body onload="init()">
 
 <!-- Make sure all your bars are the first things in your <body> -->
 <header class="bar bar-nav">
@@ -28,9 +29,10 @@
 
 <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
 <div class="content">
-    <p class="content-padded slocation" onclick="tlocation()">
+    <p class="content-padded slocation" onclick="getLocation()">
         测试
 
+    <div id="mapholder" style="width:100%;height: 100px"></div>
     </p>
     <!-- <p class="content-padded">Thanks for downloading Ratchet. This is an example HTML page that's linked up to compiled
          Ratchet CSS and JS, has the proper meta tags and the HTML structure. Need some more help before you start
