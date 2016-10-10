@@ -4,84 +4,53 @@
 
 function init() {
     var map = new AMap.Map('mapholder', {
-        center: [117.000923, 36.675807],
-        zoom: 11
+        zoom: 10,
+        center: [116.39, 39.9]
     });
+
+    getLocation();
 }
 
-/*
- function tlocation() {
-
- var x = document.getElementById("demo");
- if (navigator.geolocation) {
- navigator.geolocation.getCurrentPosition(showPosition);
- console.log("navigator.geolocation true");
- }
- else {
- console.log("navigator.geolocation false");
- x.innerHTML = "Geolocation is not supported by this browser.";
- }
-
- $(document).ready(function () {
- $(".slocation").append("666");
- });
- }
+var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
 
 
- function showPosition() {
-
- }*/
-var x = document.getElementsByClassName("slocation");
 function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    }
-    else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
+    navigator.geolocation.getCurrentPosition(locationSuccess, locationError, options);
 }
 
-function showPosition(position) {
-    console.log(position.coords.latitude, position.coords.longitude);
+function locationSuccess(pos) {
+    var crd = pos.coords;
+    console.log('Your current position is:');
+    console.log('Latitude : ' + crd.latitude);
+    console.log('Longitude: ' + crd.longitude);
+    console.log('More or less ' + crd.accuracy + ' meters.');
 
-    var map = new AMap.Map('mapholder', {
-        // 设置中心点
-        center: [position.coords.longitude, position.coords.latitude],
+    var map = new AMap.Map('mapholder');
+    map.setZoom(15);
+    map.setCenter([crd.longitude, crd.latitude]);
 
-        // 设置缩放级别
-        zoom: 13
-    });
 
     var marker = new AMap.Marker({
         //复杂图标
-        icon: new AMap.Icon({
-            //图标大小
-            size: new AMap.Size(28, 37),
-            //大图地址
-            image: "http://webapi.amap.com/images/custom_a_j.png",
-            imageOffset: new AMap.Pixel(-28, 0)
-        }),
+        /* icon: new AMap.Icon({
+         //图标大小
+         size: new AMap.Size(28, 37),
+         //大图地址
+         image: "http://webapi.amap.com/images/custom_a_j.png",
+         imageOffset: new AMap.Pixel(-28, 0)
+         }),*/
         //在地图上添加点
-        position: [position.coords.longitude, position.coords.latitude]
+        position: [crd.longitude, crd.latitude]
     });
 
     marker.setMap(map);
+};
 
-}
+function locationError(err) {
+    console.warn('ERROR(' + err.code + '): ' + err.message);
+};
 
-function showError(error) {
-    switch (error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
