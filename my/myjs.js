@@ -45,3 +45,62 @@ function index_01_init() {
         }
     });
 }
+
+
+function loadData_to_new(fileurl) {
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            // document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            showJSON_to_New(xmlhttp.responseText);
+        }
+    }
+    xmlhttp.open("GET", fileurl, true);
+    xmlhttp.send();
+}
+
+function showJSON_to_New(infos) {
+    var jsonOb = JSON.parse(infos);
+
+    if (jsonOb.result == "01") {
+
+        for (var i = 0; i < jsonOb.pd.length; i++) {
+
+            var picUrl = jsonOb.pd[i].PICURL;
+            var PLACE = jsonOb.pd[i].PLACE;
+            var STRTIME = jsonOb.pd[i].STRTIME;
+            var USERNAME = jsonOb.pd[i].USERNAME;
+            var MESSAGEINFO = jsonOb.pd[i].MESSAGEINFO;
+
+            if (!picUrl) {
+                $(".table-view").append("<li class='table-view-cell media' >" +
+                    "<a class ='navigate-right'>" +
+                    "<div class ='media-body'>" + USERNAME +
+                    "<p>" + MESSAGEINFO + "<br/>" + STRTIME + " " + PLACE + "</p>" +
+                    "</p> " +
+                    "</div> " +
+                    "</a> " +
+                    "</li>");
+            } else {
+                $(".table-view").append("<li class='table-view-cell media' >" +
+                    "<a class ='navigate-right'>" +
+                    "<img class ='media-object pull-left' width='42px' height='42px' src='" + picUrl + "'>" +
+                    "<div class ='media-body'>" + USERNAME +
+                    "<p>" + MESSAGEINFO + "<br/>" + STRTIME + " " + PLACE + "</p>" +
+                    "</p> " +
+                    "</div> " +
+                    "</a> " +
+                    "</li>");
+            }
+
+        }
+    }
+
+
+}
