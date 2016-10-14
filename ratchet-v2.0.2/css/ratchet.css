@@ -950,7 +950,9 @@ select {
   background-color: #eee;
 }
 .segmented-control .control-item.active {
-  background-color: #ccc;
+  /*background-color: #ccc;*/
+  background-color: #000000;
+  color: #f2f2f2;
 }
 
 .segmented-control-primary {
