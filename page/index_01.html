@@ -28,7 +28,6 @@
 </head>
 <body onload="index_01_init()">
 
-
 <header class="bar bar-nav">
     <button class="btn pull-left">
         Left
@@ -36,13 +35,13 @@
     <button class="btn pull-right">
         Right
     </button>
-    <div class="segmented-control dv_index_01">
-        <a class="control-item active" id="tab_new">最新</a>
-        <a class="control-item" id="tab_hot">最热</a>
+    <div class="segmented-control">
+        <a class="control-item active" id="tab_new" onclick="qiehuan(0)">最新</a>
+        <a class="control-item" id="tab_hot" onclick="qiehuan(1)">最热</a>
     </div>
 </header>
 <div class="content">
-    <iframe id="if_index_01" src="../page/hengji_new.html" style="background-color: #78c6e3"></iframe>
+    <iframe id="if_index_01"></iframe>
 
 </div>
 
