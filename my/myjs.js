@@ -4,6 +4,11 @@
 
 var isphone = isPhone();
 
+var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
 
 function index_init() {
     //绑定主页下面两个的事件
@@ -101,7 +106,25 @@ function index_01_init() {
 }
 
 
+function initIScroll() {
+    var myScroll;
+
+    myScroll = new IScroll('#wrapper', {
+        scrollbars: true,
+        mouseWheel: true,
+        interactiveScrollbars: true,
+        shrinkScrollbars: 'scale',
+        fadeScrollbars: true
+    });
+
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, false);
+}
 function loadData_to_new(fileurl) {
+
+    initMap();
+
     if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }
@@ -116,6 +139,93 @@ function loadData_to_new(fileurl) {
     }
     xmlhttp.open("GET", fileurl, true);
     xmlhttp.send();
+
+
+}
+
+function initMap() {
+    var map = new BMap.Map('mapholder');
+    var point = new BMap.Point(116.404, 39.915); // 创建点坐标
+    map.centerAndZoom(point, 15); // 初始化地图，设置中心点坐标和地图级别
+
+    getLocation();
+}
+
+function locationSuccess(pos) {
+
+    var crd = pos.coords
+    var map = new BMap.Map("mapholder");
+    var point = new BMap.Point(crd.longitude, crd.latitude);
+
+    // 百度地图API功能
+    console.log('Your current position is:');
+    console.log('Latitude : ' + crd.latitude);
+    console.log('Longitude: ' + crd.longitude);
+    //地图初始化
+    map.centerAndZoom(point, 15);
+    map.addControl(new BMap.NavigationControl());
+
+    //坐标转换完之后的回调函数
+    translateCallback = function (data) {
+        if (data.status === 0) {
+            var marker = new BMap.Marker(data.points[0]);
+            map.addOverlay(marker);
+            map.setCenter(data.points[0]);
+        }
+    }
+
+    setTimeout(function () {
+        var convertor = new BMap.Convertor();
+        var pointArr = [];
+        pointArr.push(point);
+        convertor.translate(pointArr, 1, 5, translateCallback)
+    }, 1000);
+
+
+    /* var crd = pos.coords;
+     console.log('Your current position is:');
+     console.log('Latitude : ' + crd.latitude);
+     console.log('Longitude: ' + crd.longitude);
+     console.log('More or less ' + crd.accuracy + ' meters.');
+
+     var map = new BMap.Map("mapholder");
+     var point = new BMap.Point(crd.longitude, crd.latitude);
+
+
+     window.setTimeout(function () {
+     map.panTo(point);
+     }, 1000);
+
+     var marker = new BMap.Marker(point);
+     map.addOverlay(marker);*/
+    // 将标注添加到地图中
+    /* var translateCallback = function (data) {
+     if (data.status === 0) {
+     var marker = new BMap.marker(data.points[0]);
+     console.log('转换成功 longitude: ' + marker.longitude);
+     console.log('转换成功 latitude: ' + marker.latitude);
+     map.addOverlay(marker);
+     }else{
+     console.log('data.status: '+data.status);
+     }
+     }
+
+     setTimeout(function () {
+     var convertor = new BMap.Convertor();
+     var pointArr = [];
+     pointArr.push(point);
+     console.log('setTimeout');
+     convertor.translate(pointArr, 1, 5, translateCallback, 1000);
+     })*/
+
+}
+
+function locationError(err) {
+    console.log('ERROR(' + err.code + '): ' + err.message);
+}
+
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(locationSuccess, locationError, options);
 }
 
 function showJSON_to_New(infos) {
@@ -123,6 +233,7 @@ function showJSON_to_New(infos) {
 
     if (jsonOb.result == "01") {
 
+        $(".table-view").append("<ul>");
         for (var i = 0; i < jsonOb.pd.length; i++) {
 
             var picUrl = jsonOb.pd[i].PICURL;
@@ -151,9 +262,8 @@ function showJSON_to_New(infos) {
                     "</a> " +
                     "</li>");
             }
-
         }
+
+        $(".table-view").append("</ul>");
     }
-
-
 }
