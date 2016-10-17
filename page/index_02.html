@@ -26,33 +26,87 @@
     <script src="../other/jquery-3.1.1.js"></script>
 </head>
 <body>
-<header class="bar bar-nav">
+<header class="bar bar-nav primColor">
     <h1 class="title">我的</h1>
 </header>
 
 <div class="content">
     <ul class="table-view">
         <li class="table-view-cell">
-            <a class="push-right" href="#">
+            <a class="push-right " href="#mycomment">
+                <span class="media-object pull-left icon icon-trash"></span>
                 <strong>我的评论</strong>
             </a>
         </li>
         <li class="table-view-cell">
-            <a class="push-right" href="#">
+            <a class="push-right" href="#myhengji">
+                <span class="media-object pull-left icon icon-trash"></span>
                 <strong>我的哼叽</strong>
             </a>
         </li>
         <li class="table-view-cell">
-            <a class="push-right" href="#">
+            <a class="push-right" href="#mypoint">
+                <span class="media-object pull-left icon icon-trash"></span>
                 <strong>我的地点</strong>
             </a>
         </li>
         <li class="table-view-cell">
-            <a class="push-right" href="#">
+            <a class="push-right" href="#mysetting">
+                <span class="media-object pull-left icon icon-trash"></span>
                 <strong>设置</strong>
             </a>
         </li>
     </ul>
 </div>
+
+
+<div id="mycomment" class="modal">
+    <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#mycomment"></a>
+        <h1 class="title">我的评论</h1>
+    </header>
+
+    <div class="content">
+        <p class="content-padded"> 我的评论</p>
+    </div>
+</div>
+
+
+<div id="myhengji" class="modal">
+    <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myhengji"></a>
+        <h1 class="title">我的哼叽</h1>
+    </header>
+
+    <div class="content">
+        <p class="content-padded"> 我的哼叽</p>
+    </div>
+</div>
+
+
+<div id="mypoint" class="modal">
+    <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#mypoint"></a>
+        <h1 class="title">我的地点</h1>
+    </header>
+
+    <div class="content">
+        <p class="content-padded"> 我的地点</p>
+    </div>
+</div>
+
+
+<div id="mysetting" class="modal">
+    <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#mysetting"></a>
+        <h1 class="title">我的设置</h1>
+    </header>
+
+    <div class="content">
+        <p class="content-padded"> 我的设置</p>
+    </div>
+</div>
+
+
 </body>
 </html>

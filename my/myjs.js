@@ -180,48 +180,11 @@ function locationSuccess(pos) {
         pointArr.push(point);
         convertor.translate(pointArr, 1, 5, translateCallback)
     }, 1000);
-
-
-    /* var crd = pos.coords;
-     console.log('Your current position is:');
-     console.log('Latitude : ' + crd.latitude);
-     console.log('Longitude: ' + crd.longitude);
-     console.log('More or less ' + crd.accuracy + ' meters.');
-
-     var map = new BMap.Map("mapholder");
-     var point = new BMap.Point(crd.longitude, crd.latitude);
-
-
-     window.setTimeout(function () {
-     map.panTo(point);
-     }, 1000);
-
-     var marker = new BMap.Marker(point);
-     map.addOverlay(marker);*/
-    // 将标注添加到地图中
-    /* var translateCallback = function (data) {
-     if (data.status === 0) {
-     var marker = new BMap.marker(data.points[0]);
-     console.log('转换成功 longitude: ' + marker.longitude);
-     console.log('转换成功 latitude: ' + marker.latitude);
-     map.addOverlay(marker);
-     }else{
-     console.log('data.status: '+data.status);
-     }
-     }
-
-     setTimeout(function () {
-     var convertor = new BMap.Convertor();
-     var pointArr = [];
-     pointArr.push(point);
-     console.log('setTimeout');
-     convertor.translate(pointArr, 1, 5, translateCallback, 1000);
-     })*/
-
 }
 
 function locationError(err) {
     console.log('ERROR(' + err.code + '): ' + err.message);
+    alert("获取定位失败" + err.message)
 }
 
 function getLocation() {
@@ -244,7 +207,7 @@ function showJSON_to_New(infos) {
 
             if (!picUrl) {
                 $(".table-view").append("<li class='table-view-cell media' >" +
-                    "<a class ='navigate-right'>" +
+                    "<a class ='navigate-right'  href='http://www.hao123.com' target='_top'>" +
                     "<div class ='media-body'>" + USERNAME +
                     "<p>" + MESSAGEINFO + "<br/>" + STRTIME + " " + PLACE + "</p>" +
                     "</p> " +
@@ -253,7 +216,7 @@ function showJSON_to_New(infos) {
                     "</li>");
             } else {
                 $(".table-view").append("<li class='table-view-cell media' >" +
-                    "<a class ='navigate-right'>" +
+                    "<a class ='navigate-right' href='http://www.baidu.com' target='_top'>" +
                     "<img class ='media-object pull-left' width='42px' height='42px' src='" + picUrl + "'>" +
                     "<div class ='media-body'>" + USERNAME +
                     "<p>" + MESSAGEINFO + "<br/>" + STRTIME + " " + PLACE + "</p>" +
