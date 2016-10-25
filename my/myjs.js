@@ -125,7 +125,7 @@ function loadData_to_new(fileurl) {
 
     initMap();
 
-    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+   /* if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
     }
     else {// code for IE6, IE5
@@ -138,9 +138,26 @@ function loadData_to_new(fileurl) {
         }
     }
     xmlhttp.open("GET", fileurl, true);
-    xmlhttp.send();
+    xmlhttp.send();*/
 
 
+    var url = 'http://www.douhuayolo.com:8080/zdzh/appmessage/getAppMessageByHot.do?USERID=100198&currentPage=1&showCount=10&XINDEX=31.31369&YINDEX=121.522007&LASTTIME=2016-10-12%2018:42:12&REGISTID=2016101217265221770&LOCALPAGE=0&FKEY=cdaa2fd7c01183ad57c0e4755d0cd77f';
+     $.ajax({
+             type: "get",
+             async: true,
+             url: url,
+             dataType: "jsonp",
+             jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+             jsonpCallback:"flightHandler",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+             success: function(json){
+                 alert(json);
+             },
+             error: function(){
+                 alert('fail');
+             }
+         });
+
+    
 }
 
 function initMap() {
