@@ -124,7 +124,7 @@ function locationSuccess(pos) {
             var marker = new BMap.Marker(data.points[0]);
             map.addOverlay(marker);
             map.setCenter(data.points[0]);
-            loadData_to_new('../hengjih5/File/test_hot.txt',0);
+            loadData_to_new('../File/test_hot.txt',0);
         }
     }
 
@@ -139,7 +139,7 @@ function locationSuccess(pos) {
 function locationError(err) {
     console.log('ERROR(' + err.code + '): ' + err.message);
     alert("获取定位失败" + err.message);
-    loadData_to_new('../hengjih5/File/test_hot.txt',0);
+    loadData_to_new('../File/test_hot.txt',0);
 }
 
 function getLocation() {
