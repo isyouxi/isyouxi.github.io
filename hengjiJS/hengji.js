@@ -48,11 +48,11 @@ function changeType(num) {
         if (num == 0) {
             $('#mainNew').css('zIndex',2);
             $('#mainHot').css('zIndex',1);
-            loadData_to_new('../hengjih5/File/test_new.txt',0);
+            loadData_to_new('File/test_new.txt',0);
         } else {
             $('#mainNew').css('zIndex',1);
             $('#mainHot').css('zIndex',2);
-            loadData_to_new('../hengjih5/File/test_hot.txt',1);
+            loadData_to_new('File/test_hot.txt',1);
         }
     } else {
         if (num == 0) {
@@ -62,7 +62,7 @@ function changeType(num) {
                 $('#if_index_01', this.document).attr("src", "hengji_new.html");
                 $('#mainNew').css('zIndex',2);
                 $('#mainHot').css('zIndex',1);
-                loadData_to_new('../hengjih5/File/test_new.txt',0);
+                loadData_to_new('File/test_new.txt',0);
             }
         } else {
             if (!$("#tab_hot").hasClass("active")) {
@@ -71,7 +71,7 @@ function changeType(num) {
                 $('#if_index_01', this.document).attr("src", "hengji_hot.html");
                 $('#mainNew').css('zIndex',1);
                 $('#mainHot').css('zIndex',2);
-                loadData_to_new('../hengjih5/File/test_hot.txt',1);
+                loadData_to_new('File/test_hot.txt',1);
             }
         }
     }
@@ -115,7 +115,7 @@ function locationSuccess(pos) {
             var marker = new BMap.Marker(data.points[0]);
             map.addOverlay(marker);
             map.setCenter(data.points[0]);
-            loadData_to_new('../hengjih5/File/test_hot.txt',0);
+            loadData_to_new('File/test_hot.txt',0);
         }
     }
 
@@ -130,7 +130,7 @@ function locationSuccess(pos) {
 function locationError(err) {
     console.log('ERROR(' + err.code + '): ' + err.message);
     alert("获取定位失败" + err.message);
-    loadData_to_new('../hengjih5/File/test_hot.txt',0);
+    loadData_to_new('File/test_hot.txt',0);
 }
 
 function getLocation() {
