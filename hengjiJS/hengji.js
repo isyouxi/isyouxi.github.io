@@ -1,7 +1,6 @@
 /**
- * Created by 张逗张花安卓 on 2016/10/13.
+ * Created by douhua4 on 16/10/25.
  */
-
 var isphone = isPhone();
 
 var options = {
@@ -10,34 +9,59 @@ var options = {
     maximumAge: 0
 };
 
-function index_init() {
+function mainOnload() {
+    console.log(123);
+    initMap();
     //绑定主页下面两个的事件
+    $(".content").css("height",window.innerHeight-51+'px');
     $(".indexs").delegate("a", "click", function () {
         if (!$(this).hasClass("active")) {
-
             $("#tab_home").toggleClass("active");
             $("#tab_mine").toggleClass("active");
             if ($(this).children(".tab-label").text() == "主页") {
-                $('#if_main_content', parent.document).attr("src", "page/index_01.html");
+                $("#myDiv").css("zIndex",1);
+                $("#mainDiv").css("zIndex",2);
+                $(".pull-left").css("display","block");
+                $(".pull-right").css("display","block");
+                $(".segmented-control").css("display","block");
+                $(".title").css("display","none");
             } else {
-                $('#if_main_content', parent.document).attr("src", "page/index_02.html");
+                $("#myDiv").css("zIndex",2);
+                $("#myDiv").css("height",window.innerHeight-51+'px');
+                $(".content").css("height",window.innerHeight-51+'px');
+                $("#mainDiv").css("zIndex",1);
+                $(".pull-left").css("display","none");
+                $(".pull-right").css("display","none");
+                $(".segmented-control").css("display","none");
+                $(".title").css("display","block");
+                alert($("#myDiv").css("height"));
+                alert($(".content").css("height"));
+                alert($("body").css("height"));
             }
         }
     });
-
 }
 
 function qiehuan(num) {
     console.log("isPhone:" + isphone)
     console.log("qiehuan:" + num)
 
+    changeType(num);
 
+}
+
+function changeType(num) {
     if (isphone) {
         if (num == 0) {
             $('#if_index_01', this.document).attr("src", "hengji_new.html");
+            $('#mainNew').css('zIndex',2);
+            $('#mainHot').css('zIndex',1);
+            loadData_to_new('File/test_new.txt',0);
         } else {
             $('#if_index_01', this.document).attr("src", "hengji_hot.html");
-
+            $('#mainNew').css('zIndex',1);
+            $('#mainHot').css('zIndex',2);
+            loadData_to_new('File/test_hot.txt',1);
         }
     } else {
         if (num == 0) {
@@ -45,102 +69,31 @@ function qiehuan(num) {
                 $("#tab_new").toggleClass("active");
                 $("#tab_hot").toggleClass("active");
                 $('#if_index_01', this.document).attr("src", "hengji_new.html");
-
-
+                $('#mainNew').css('zIndex',2);
+                $('#mainHot').css('zIndex',1);
+                loadData_to_new('File/test_new.txt',0);
             }
         } else {
             if (!$("#tab_hot").hasClass("active")) {
                 $("#tab_new").toggleClass("active");
                 $("#tab_hot").toggleClass("active");
                 $('#if_index_01', this.document).attr("src", "hengji_hot.html");
+                $('#mainNew').css('zIndex',1);
+                $('#mainHot').css('zIndex',2);
+                loadData_to_new('File/test_hot.txt',1);
             }
         }
     }
-
 }
-
 
 function isPhone() {
-
-    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-        //alert(navigator.userAgent);
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
         return true;
-    } else if (/(Android)/i.test(navigator.userAgent)) {
-        //alert(navigator.userAgent);
+    }else if (/(Android)/i.test(navigator.userAgent)){
         return true;
-    } else {
+    }else {
         return false;
     }
-    ;
-}
-
-
-function index_01_init() {
-    console.log("index_01_init")
-    $('#if_index_01', this.document).attr("src", "hengji_new.html");
-
-
-    //绑定主页下面两个的事件 (移动设备有问题 无反应)
-    /*
-     $(".dv_index_01").delegate("a", "click", function () {
-     if (!$(this).hasClass("active")) {
-
-     $("#tab_new").toggleClass("active");
-     $("#tab_hot").toggleClass("active");
-
-     console.log("-------" + $(this).text())
-     if ($(this).text() == "最新") {
-     $('#if_index_01', this.document).attr("src", "hengji_new.html");
-     console.log("attr hengji_new")
-
-     } else {
-     $('#if_index_01', this.document).attr("src", "hengji_hot.html");
-
-     console.log("attr hengji_hot")
-
-     }
-
-     console.log("$(this).text() :" + $(this).text())
-     }
-     });*/
-}
-
-
-function initIScroll() {
-    var myScroll;
-
-    myScroll = new IScroll('#wrapper', {
-        scrollbars: true,
-        mouseWheel: true,
-        interactiveScrollbars: true,
-        shrinkScrollbars: 'scale',
-        fadeScrollbars: true
-    });
-
-    document.addEventListener('touchmove', function (e) {
-        e.preventDefault();
-    }, false);
-}
-function loadData_to_new(fileurl) {
-
-    initMap();
-
-    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-    }
-    else {// code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            showJSON_to_New(xmlhttp.responseText);
-        }
-    }
-    xmlhttp.open("GET", fileurl, true);
-    xmlhttp.send();
-
-
 }
 
 function initMap() {
@@ -171,6 +124,7 @@ function locationSuccess(pos) {
             var marker = new BMap.Marker(data.points[0]);
             map.addOverlay(marker);
             map.setCenter(data.points[0]);
+            loadData_to_new('File/test_hot.txt',0);
         }
     }
 
@@ -178,27 +132,40 @@ function locationSuccess(pos) {
         var convertor = new BMap.Convertor();
         var pointArr = [];
         pointArr.push(point);
-        convertor.translate(pointArr, 1, 5, translateCallback)
+        convertor.translate(pointArr, 1, 5, translateCallback);
     }, 1000);
 }
 
 function locationError(err) {
     console.log('ERROR(' + err.code + '): ' + err.message);
-    alert("获取定位失败" + err.message)
+    alert("获取定位失败" + err.message);
+    loadData_to_new('File/test_hot.txt',0);
 }
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(locationSuccess, locationError, options);
 }
 
-function showJSON_to_New(infos) {
+function loadData_to_new(fileurl,index) {
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            showJSON_to_New(xmlhttp.responseText,index);
+        }
+    }
+    xmlhttp.open("GET", fileurl, true);
+    xmlhttp.send();
+}
+function showJSON_to_New(infos,index) {
     var jsonOb = JSON.parse(infos);
-
     if (jsonOb.result == "01") {
-
-        $(".table-view").append("<ul>");
+        $(".table-view1").append("<ul>");
         for (var i = 0; i < jsonOb.pd.length; i++) {
-
             var picUrl = jsonOb.pd[i].PICURL;
             var PLACE = jsonOb.pd[i].PLACE;
             var STRTIME = jsonOb.pd[i].STRTIME;
@@ -206,8 +173,8 @@ function showJSON_to_New(infos) {
             var MESSAGEINFO = jsonOb.pd[i].MESSAGEINFO;
 
             if (!picUrl) {
-                $(".table-view").append("<li class='table-view-cell media' >" +
-                    "<a class ='navigate-right'  href='http://www.hao123.com' target='_top'>" +
+                $("#table-view1").append("<li class='table-view-cell media' >" +
+                    "<a  href='http://www.hao123.com' target='_top'>" +
                     "<div class ='media-body'>" + USERNAME +
                     "<p>" + MESSAGEINFO + "<br/>" + STRTIME + " " + PLACE + "</p>" +
                     "</p> " +
@@ -215,8 +182,8 @@ function showJSON_to_New(infos) {
                     "</a> " +
                     "</li>");
             } else {
-                $(".table-view").append("<li class='table-view-cell media' >" +
-                    "<a class ='navigate-right' href='http://www.baidu.com' target='_top'>" +
+                $("#table-view1").append("<li class='table-view-cell media' >" +
+                    "<a href='http://www.baidu.com' target='_top'>" +
                     "<img class ='media-object pull-left' width='42px' height='42px' src='" + picUrl + "'>" +
                     "<div class ='media-body'>" + USERNAME +
                     "<p>" + MESSAGEINFO + "<br/>" + STRTIME + " " + PLACE + "</p>" +
@@ -226,7 +193,6 @@ function showJSON_to_New(infos) {
                     "</li>");
             }
         }
-
-        $(".table-view").append("</ul>");
+        $(".table-view1").append("</ul>");
     }
 }
