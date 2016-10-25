@@ -56,12 +56,20 @@ function changeType(num) {
             $('#if_index_01', this.document).attr("src", "hengji_new.html");
             $('#mainNew').css('zIndex',2);
             $('#mainHot').css('zIndex',1);
+<<<<<<< HEAD:hengjiJS/hengji.js
             loadData_to_new('File/test_new.txt',0);
+=======
+            loadData_to_new('../File/test_new.txt',0);
+>>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
         } else {
             $('#if_index_01', this.document).attr("src", "hengji_hot.html");
             $('#mainNew').css('zIndex',1);
             $('#mainHot').css('zIndex',2);
+<<<<<<< HEAD:hengjiJS/hengji.js
             loadData_to_new('File/test_hot.txt',1);
+=======
+            loadData_to_new('../File/test_hot.txt',1);
+>>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
         }
     } else {
         if (num == 0) {
@@ -71,7 +79,11 @@ function changeType(num) {
                 $('#if_index_01', this.document).attr("src", "hengji_new.html");
                 $('#mainNew').css('zIndex',2);
                 $('#mainHot').css('zIndex',1);
+<<<<<<< HEAD:hengjiJS/hengji.js
                 loadData_to_new('File/test_new.txt',0);
+=======
+                loadData_to_new('../File/test_new.txt',0);
+>>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
             }
         } else {
             if (!$("#tab_hot").hasClass("active")) {
@@ -80,7 +92,11 @@ function changeType(num) {
                 $('#if_index_01', this.document).attr("src", "hengji_hot.html");
                 $('#mainNew').css('zIndex',1);
                 $('#mainHot').css('zIndex',2);
+<<<<<<< HEAD:hengjiJS/hengji.js
                 loadData_to_new('File/test_hot.txt',1);
+=======
+                loadData_to_new('../File/test_hot.txt',1);
+>>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
             }
         }
     }
@@ -124,7 +140,11 @@ function locationSuccess(pos) {
             var marker = new BMap.Marker(data.points[0]);
             map.addOverlay(marker);
             map.setCenter(data.points[0]);
+<<<<<<< HEAD:hengjiJS/hengji.js
             loadData_to_new('File/test_hot.txt',0);
+=======
+            loadData_to_new('../File/test_hot.txt',0);
+>>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
         }
     }
 
@@ -139,7 +159,11 @@ function locationSuccess(pos) {
 function locationError(err) {
     console.log('ERROR(' + err.code + '): ' + err.message);
     alert("获取定位失败" + err.message);
+<<<<<<< HEAD:hengjiJS/hengji.js
     loadData_to_new('File/test_hot.txt',0);
+=======
+    loadData_to_new('../File/test_hot.txt',0);
+>>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
 }
 
 function getLocation() {
