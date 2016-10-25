@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* Packaged at 2016/10/10. */
+/* Designed and developed by YouXi. */
+
+.bar {
+    background-color: #ffc737;
+}
+
+#button {
+    width: 50px;
+    height: 20px;
+    background-color: #1a9bcb;
+}
