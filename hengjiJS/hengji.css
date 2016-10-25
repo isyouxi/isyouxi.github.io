@@ -21,6 +21,8 @@
     top: 44px;
     left: 0px;
     background-color: white;
+    height: 473px;
+    bottom: 0px;
 }
 
 #mainNew{
@@ -39,6 +41,7 @@
     top: 44px;
     left: 0px;
     background-color: white;
+    overflow: hidden;
 }
 
 

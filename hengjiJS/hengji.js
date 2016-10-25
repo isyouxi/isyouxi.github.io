@@ -13,30 +13,24 @@ function mainOnload() {
     console.log(123);
     initMap();
     //绑定主页下面两个的事件
-    $(".content").css("height",window.innerHeight-51+'px');
     $(".indexs").delegate("a", "click", function () {
         if (!$(this).hasClass("active")) {
             $("#tab_home").toggleClass("active");
             $("#tab_mine").toggleClass("active");
             if ($(this).children(".tab-label").text() == "主页") {
-                $("#myDiv").css("zIndex",1);
-                $("#mainDiv").css("zIndex",2);
+                $("#myDiv").css("zIndex",1).css("display",'none');
+                $("#mainDiv").css("zIndex",2).css("display",'block');
                 $(".pull-left").css("display","block");
                 $(".pull-right").css("display","block");
                 $(".segmented-control").css("display","block");
                 $(".title").css("display","none");
             } else {
-                $("#myDiv").css("zIndex",2);
-                $("#myDiv").css("height",window.innerHeight-51+'px');
-                $(".content").css("height",window.innerHeight-51+'px');
-                $("#mainDiv").css("zIndex",1);
+                $("#myDiv").css("zIndex",2).css("display",'block').css('height',window.innerHeight-95+'px');
+                $("#mainDiv").css("zIndex",1).css("display",'none');
                 $(".pull-left").css("display","none");
                 $(".pull-right").css("display","none");
                 $(".segmented-control").css("display","none");
                 $(".title").css("display","block");
-                alert($("#myDiv").css("height"));
-                alert($(".content").css("height"));
-                alert($("body").css("height"));
             }
         }
     });
@@ -45,7 +39,6 @@ function mainOnload() {
 function qiehuan(num) {
     console.log("isPhone:" + isphone)
     console.log("qiehuan:" + num)
-
     changeType(num);
 
 }
@@ -53,23 +46,13 @@ function qiehuan(num) {
 function changeType(num) {
     if (isphone) {
         if (num == 0) {
-            $('#if_index_01', this.document).attr("src", "hengji_new.html");
             $('#mainNew').css('zIndex',2);
             $('#mainHot').css('zIndex',1);
-<<<<<<< HEAD:hengjiJS/hengji.js
-            loadData_to_new('File/test_new.txt',0);
-=======
-            loadData_to_new('../File/test_new.txt',0);
->>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
+            loadData_to_new('../hengjih5/File/test_new.txt',0);
         } else {
-            $('#if_index_01', this.document).attr("src", "hengji_hot.html");
             $('#mainNew').css('zIndex',1);
             $('#mainHot').css('zIndex',2);
-<<<<<<< HEAD:hengjiJS/hengji.js
-            loadData_to_new('File/test_hot.txt',1);
-=======
-            loadData_to_new('../File/test_hot.txt',1);
->>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
+            loadData_to_new('../hengjih5/File/test_hot.txt',1);
         }
     } else {
         if (num == 0) {
@@ -79,11 +62,7 @@ function changeType(num) {
                 $('#if_index_01', this.document).attr("src", "hengji_new.html");
                 $('#mainNew').css('zIndex',2);
                 $('#mainHot').css('zIndex',1);
-<<<<<<< HEAD:hengjiJS/hengji.js
-                loadData_to_new('File/test_new.txt',0);
-=======
-                loadData_to_new('../File/test_new.txt',0);
->>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
+                loadData_to_new('../hengjih5/File/test_new.txt',0);
             }
         } else {
             if (!$("#tab_hot").hasClass("active")) {
@@ -92,11 +71,7 @@ function changeType(num) {
                 $('#if_index_01', this.document).attr("src", "hengji_hot.html");
                 $('#mainNew').css('zIndex',1);
                 $('#mainHot').css('zIndex',2);
-<<<<<<< HEAD:hengjiJS/hengji.js
-                loadData_to_new('File/test_hot.txt',1);
-=======
-                loadData_to_new('../File/test_hot.txt',1);
->>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
+                loadData_to_new('../hengjih5/File/test_hot.txt',1);
             }
         }
     }
@@ -140,11 +115,7 @@ function locationSuccess(pos) {
             var marker = new BMap.Marker(data.points[0]);
             map.addOverlay(marker);
             map.setCenter(data.points[0]);
-<<<<<<< HEAD:hengjiJS/hengji.js
-            loadData_to_new('File/test_hot.txt',0);
-=======
-            loadData_to_new('../File/test_hot.txt',0);
->>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
+            loadData_to_new('../hengjih5/File/test_hot.txt',0);
         }
     }
 
@@ -159,11 +130,7 @@ function locationSuccess(pos) {
 function locationError(err) {
     console.log('ERROR(' + err.code + '): ' + err.message);
     alert("获取定位失败" + err.message);
-<<<<<<< HEAD:hengjiJS/hengji.js
-    loadData_to_new('File/test_hot.txt',0);
-=======
-    loadData_to_new('../File/test_hot.txt',0);
->>>>>>> 298ee55004db8bcaeffb5d8e5917250c2caf9827:hengjiJS/hengji.js
+    loadData_to_new('../hengjih5/File/test_hot.txt',0);
 }
 
 function getLocation() {
