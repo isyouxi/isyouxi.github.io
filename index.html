@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Ratchet template page</title>
-
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!-- Ratchet -->
     <!-- Sets initial viewport load and disables zooming  -->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
@@ -12,34 +12,88 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <!-- Include the compiled Ratchet CSS -->
-    <link href="ratchet/dist/css/ratchet.css" rel="stylesheet">
-    <link href="css/mycss.css" rel="stylesheet">
-    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <link href="ratchet-v2.0.2/css/ratchet.css" rel="stylesheet">
+
     <!-- Include the compiled Ratchet JS -->
-    <script src="ratchet/dist/js/ratchet.js"></script>
-    <script src="js/myjs.js"></script>
+    <script src="ratchet-v2.0.2/js/ratchet.js"></script>
+    <!-- Ratchet end-->
+
+    <script src="Other/jquery-3.1.1.js"></script>
+    <script src="hengjiJS/hengji.js"></script>
+    <link href="hengjiJS/hengji.css" rel="stylesheet">
+
+    <!-- 百度地图 -->
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=RUhU1wlNZ53mlYP1vsABDt0tUvT47DQG"
+            type="text/javascript"></script>
+    <!-- 百度地图 end -->
 
 </head>
-<body onload="init()">
+<body onload="mainOnload()">
 
-<!-- Make sure all your bars are the first things in your <body> -->
-<header class="bar bar-nav">
-    <h1 class="title">Ratchet</h1>
-</header>
+<header class="bar bar-nav primColor">
 
-<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-<div class="content">
-    <iframe id="m_content" src="page/mian/mian_list_baidu.html" width="100%" height="100%"></iframe>
+    <button class="btn pull-left primColor nobor">
+        0
+    </button>
+
+    <span class="icon pull-right icon-compose"></span>
+    <!--<button class="btn pull-right primColor nobor"
+    >
+
+    </button>-->
     <div class="segmented-control">
-        <a class="control-item active" onclick="itemMainClick(0)" href="#item1mobile">
-
-            <span class="icon icon-back"></span>首页
-        </a>
-        <a class="control-item" onclick="itemMainClick(1)" href="#item2mobile">
-            <span class="icon icon-share"></span>我的
-        </a>
+        <a class="pri control-item active" id="tab_new" onclick="qiehuan(0)">最新</a>
+        <a class="pri control-item" id="tab_hot" onclick="qiehuan(1)">最热</a>
     </div>
 
+    <h1 class="title" style="display: none">我的</h1>
+</header>
+
+<nav class="bar bar-tab indexs">
+    <a class="tab-item  active" id="tab_home" href="#">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">主页</span>
+    </a>
+    <a class="tab-item " id="tab_mine" href="#">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">我的</span>
+    </a>
+</nav>
+
+<div class="content">
+    <div id="mainDiv">
+        <div id="mapholder" style="width:100%;height: 100px;"></div>
+        <div id="mainNew">
+            <ul id="table-view1">
+            </ul>
+        </div>
+        <div id="mainHot">
+            <ul id="table-view2">
+            </ul>
+        </div>
+    </div>
+    <div id="myDiv">
+        <ul class="table-view">
+            <li class="table-view-cell">
+                <a class="push-right " href="My/MyComment.html" data-transition="slide-in">
+                    <span class="media-object pull-left icon icon-trash"></span>
+                    <strong>我的评论</strong>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="push-right" href="My/MyHengJi.html">
+                    <span class="media-object pull-left icon icon-trash"></span>
+                    <strong>我的哼叽</strong>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="push-right" href="My/MySet.html">
+                    <span class="media-object pull-left icon icon-trash"></span>
+                    <strong>设置</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 </body>
