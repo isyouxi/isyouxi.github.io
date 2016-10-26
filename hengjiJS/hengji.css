@@ -1,0 +1,47 @@
+.primColor {
+    background-color: #FFC737;
+    color: #000000;
+}
+
+.segmented-control {
+    display: table;
+    width: 160px;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #ffc737;
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+
+#mainDiv{
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 44px;
+    left: 0px;
+    background-color: white;
+    height: 473px;
+    bottom: 0px;
+}
+
+#mainNew{
+    width: 100%;
+    z-index: 2;
+}
+#mainHot{
+    width: 100%;
+    z-index: 1;
+}
+#myDiv{
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    position: absolute;
+    top: 44px;
+    left: 0px;
+    background-color: white;
+    overflow: hidden;
+}
+
+
