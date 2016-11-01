@@ -17,8 +17,30 @@ function init() {
     curr_Window_height = document.body.clientHeight;
 
     updateScreenSet();
+
+    setClick();
+
 }
 
+
+function setClick() {
+
+    /** 菜单点击 **/
+    $("#item-menus").click(function () {
+        console.log("onclick");
+
+        if ($('body').css('-webkit-transform') != 'none') {
+            //var currTrans = $('body').css('-webkit-transform').split(/[()]/)[1];
+            // console.log(currTrans);
+            // var curr_translateX = currTrans.split(',')[4];
+            // console.log(curr_translateX);
+            $('body').css('-webkit-transform', 'none');
+        } else {
+            $("body").css("transform", 'translateX(-15.625rem)');
+        }
+
+    });
+}
 
 function sizeChange() {
     //console.log("sizeChange")
