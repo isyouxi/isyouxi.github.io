@@ -15,9 +15,7 @@ function init() {
 
     curr_Window_with = document.body.clientWidth;
     curr_Window_height = document.body.clientHeight;
-
     updateScreenSet();
-
     setClick();
 
 }
@@ -36,8 +34,9 @@ function setClick() {
             // console.log(curr_translateX);
             $('body').css('-webkit-transform', 'none');
         } else {
-            $("body").css("transform", 'translateX(-15.625rem)');
+            $('body').css('transform', 'translateX(-15.625rem)');
         }
+
 
     });
 }
@@ -57,23 +56,23 @@ function updateScreenSet() {
 
     if (curr_Window_with < 640 && currScreenMode != 'small') {
         currScreenMode = 'small';
-        console.log("change set To small");
+        console.log('change set To small');
     } else if (curr_Window_with > 640 && currScreenMode != 'large') {
-        console.log("change set To large");
+        console.log('change set To large');
         currScreenMode = 'large';
     } else {
         //console.log("no change set curr_Window_with:" + curr_Window_with + "||currScreenMode:" + currScreenMode);
         return;
     }
 
-
+    //菜单bar更新
     if (currScreenMode == 'large') {
-        $(".mobile-top-bar").hide();
-        $(".normal-top-bar").show();
+        $('.mobile-top-bar').hide();
+        $('.normal-top-bar').show();
 
     } else {
-        $(".mobile-top-bar").show();
-        $(".normal-top-bar").hide();
+        $('.mobile-top-bar').show();
+        $('.normal-top-bar').hide();
 
     }
 }
