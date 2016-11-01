@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
     <link rel="icon" href="icons/favicon.png"
           type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180"
@@ -34,7 +33,7 @@
 </head>
 
 
-<body style="overflow-x: hidden">
+<body style="overflow-x: hidden" onload="init()" onResize="sizeChange()">
 
 <div class="all-wrap">
 
@@ -83,16 +82,16 @@
             © 2016 Dude Perfect, LLC et al. All rights reserved
             © 2016 Dude Perfect, LLC et al. All rights reserved</p>
     </div>
-    </div>
+</div>
 
 
-    <!-- Bootstrap core JavaScript
-       ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!-- Bootstrap core JavaScript
+   ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 </body>
 </html>
