@@ -5,7 +5,7 @@
 var curr_Window_height;
 var curr_Window_with;
 
-var currScreenMode = 'large';//large,small
+var currScreenMode = '';//large,small
 
 function init() {
 
