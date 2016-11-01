@@ -29,13 +29,12 @@
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
-
     <!--Bootstrap end-->
 
 </head>
 
 
-<body>
+<body style="overflow-x: hidden">
 
 <div class="all-wrap">
 
@@ -46,12 +45,16 @@
     </nav>
 
     <div class="top-bar-aside">
-        <div class="side-set">
-            <div class="side-item">頁面一</div>
-            <div class="side-item">頁面二</div>
-            <div class="side-item">頁面三</div>
-            <div class="side-item">頁面四</div>
-        </div>
+        <ul id="menu-top-nav" class="off-canvas-list">
+            <li id="menu-item-1" class="menu-item"><a
+                    href="#">About</a></li>
+            <li id="menu-item-2" class="menu-item"><a
+                    href="#">Videos</a></li>
+            <li id="menu-item-23" class="menu-item"><a
+                    href="#">Press</a></li>
+            <li id="menu-item-22" class="menu-item"><a
+                    href="#">Store</a></li>
+        </ul>
     </div>
     <!--正常网页的导航-->
     <div class="normal-top-bar">
@@ -72,27 +75,24 @@
     </div>
 
     <!--中间内容-->
-    <div class="middle-container">
+    <div class="middle-container"></div>
 
-
-
-    </div>
     <!--下部分内容-->
     <div class="footer-container">
         <p class="copyright">© 2016 Dude Perfect, LLC et al. All rights reserved
             © 2016 Dude Perfect, LLC et al. All rights reserved
             © 2016 Dude Perfect, LLC et al. All rights reserved</p>
     </div>
-</div>
+    </div>
 
 
-<!-- Bootstrap core JavaScript
-   ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<!-- Bootstrap 核心 JavaScript 文件 -->
-<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- Bootstrap core JavaScript
+       ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 </body>
 </html>
