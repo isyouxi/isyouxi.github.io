@@ -46,9 +46,25 @@
 }
 
 .top-bar-aside {
+    -webkit-backface-visibility: hidden;
     background: #31fddf;
-
-
+    bottom: 0;
+    box-sizing: content-box;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    transition: transform 500ms ease 0s;
+    width: 15.625rem;
+    z-index: 1001;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate(100%, 0);
+    -o-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    right: 0;
+    top: 0;
 }
 
 .normal-top-bar .item {
@@ -80,7 +96,7 @@
     height: auto;
 }
 
-.footer-container >*{
+.footer-container > * {
     margin: 0;
     padding: 0;
 }
