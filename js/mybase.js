@@ -13,34 +13,63 @@ function init() {
     curr_Window_with = document.body.clientWidth;
     curr_Window_height = document.body.clientHeight;
     updateScreenSet();
-    setVerticalBar();
     setClick();
+    setVerticalBar();
+}
+
+
+function updateVerticalBar()
+{
+    if (currScreenMode != 'small') {
+        $('.nav-vertical-bar').show();
+        $('.mobile-nav-vertical-bar').hide();
+    } else {
+        $('.mobile-nav-vertical-bar').show();
+        $('.nav-vertical-bar').hide();
+    }
 }
 
 
 function setVerticalBar() {
 
-
-    var navs = [];
     for (var i = 1; i < 5; i++) {
-        navs[i - 1] = $('[data-number =   ' + i + ']');
+        var navs_a = $('[data-number =   ' + i + ']');
 
-      //  $("p").focus(); 或$("p").focus(fn)
-
-        navs[i - 1].mousemove(function (e) {
-            var childs = $(this).children();
+        navs_a.mousemove(function () {
             $(this).children("div.li-dot").hide();
             $(this).children("div.li-label").show();
         });
 
-        navs[i - 1].mouseleave(function (e) {
-            var childs = $(this).children();
+        navs_a.mouseleave(function () {
             $(this).children("div.li-label").hide();
             $(this).children("div.li-dot").show();
         });
     }
 
-    console.log('当前i:', navs);
+
+    $('.mobile-nav-vertical-bar').mouseleave(function () {
+        var child_ul = $(this).children('ul');
+
+        if (!child_ul.is(":hidden")) {
+            child_ul.hide();
+            $('#mobile-nav-vertical-bar-menu img').attr("src", './image/menu.png');
+            $('#mobile-nav-vertical-bar-menu').css('background', '#fff');
+        }
+
+    });
+    $('#mobile-nav-vertical-bar-menu').click(function () {
+        var bar = $('#mobile-nav-vertical-bar-ul').toggle();
+
+        if (bar.is(":hidden")) {
+            //换成menu
+            $(this).children('img').attr({'src': './image/menu.png'});
+            $(this).css('background', '#fff');
+        } else {
+            //换成close
+            $(this).children('img').attr({'src': './image/close.png'});
+            $(this).css('background', 'transparent');
+        }
+    });
 }
 
 function setClick() {
@@ -85,4 +114,6 @@ function updateScreenSet() {
         $('.mobile-top-bar').show();
         $('.normal-top-bar').hide();
     }
+
+    updateVerticalBar();
 }

@@ -7,6 +7,12 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .all-wrap {
     width: 100%;
     height: 100%;
@@ -105,8 +111,61 @@ a {
     padding: 0;
 }
 
-/*新的*/
+/*start  */
+
+.mobile-nav-vertical-bar {
+    bottom: 55px;
+    right: 20px;
+    position: fixed;
+    z-index: 1;
+}
+
+/*这里需要动态设置宽度*/
+#mobile-nav-vertical-bar-ul {
+    /*display: none;*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    min-width: 200px;
+    display: none;
+}
+
+#mobile-nav-vertical-bar-ul li {
+    padding: 0px 15px;
+    font-size: 18px;
+    height: 25px;
+    text-align: left;
+    line-height: 25px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#mobile-nav-vertical-bar-ul li a {
+    color: white;
+}
+
+#mobile-nav-vertical-bar-ul li:hover {
+    background: rgba(222, 0, 0, 0.5);
+}
+
+#mobile-nav-vertical-bar-menu {
+    background: #ffffff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#mobile-nav-vertical-bar-menu img {
+    width: 25px;
+    height: 25px;
+}
+
+
+/*end  */
+
 .nav-vertical-bar {
+    display: none;
     position: fixed;
     right: 45px;
     z-index: 1;
@@ -146,7 +205,7 @@ a {
 
 .li-label {
     right: 0;
-    display:none;
+    display: none;
     /*display: inline-block;*/
     background-color: rgba(49, 253, 223, 0.8);
     border-radius: 20px;
