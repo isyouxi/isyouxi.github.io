@@ -54,33 +54,33 @@
     </div>
     <!--正常网页的导航-->
     <div class="normal-top-bar">
-        <a class="item">标志</a>
-        <a class="item">首页</a>
-        <a class="item">视频</a>
-        <a class="item">这啥</a>
-        <a class="item">关于我们</a>
+        <a class="item" href="#">标志</a>
+        <a class="item" href="#">首页</a>
+        <a class="item" href="#mc-videos">视频</a>
+        <a class="item" href="#mc-what">这啥</a>
+        <a class="item" href="#mc-us">关于我们</a>
     </div>
 
 
     <div class="mobile-nav-vertical-bar">
         <ul id="mobile-nav-vertical-bar-ul">
-            <li class="mobile-nav-li">
+            <li class="mobile-nav-li" >
                 <a href="#">
                     首页
                 </a>
             </li>
             <li class="mobile-nav-li">
-                <a href="#">
+                <a href="#mc-videos">
                     视频
                 </a>
             </li>
             <li class="mobile-nav-li">
-                <a href="#">
+                <a href="#mc-what">
                     这啥
                 </a>
             </li>
             <li class="mobile-nav-li">
-                <a href="#">
+                <a href="#mc-us">
                     关于我们
                 </a>
             </li>
@@ -102,19 +102,19 @@
 
         </div>
         <div class="bar-li">
-            <a href="#" data-number="2">
+            <a href="#mc-videos" data-number="2">
                 <div class="li-dot"></div>
                 <div class="li-label">视频</div>
             </a>
         </div>
         <div class="bar-li">
-            <a href="#" data-number="3">
+            <a href="#mc-what" data-number="3">
                 <div class="li-dot"></div>
                 <div class="li-label">这啥</div>
             </a>
         </div>
         <div class="bar-li">
-            <a href="#" data-number="4">
+            <a href="#mc-us" data-number="4">
                 <div class="li-dot"></div>
                 <div class="li-label">关于我们</div>
             </a>
@@ -128,7 +128,20 @@
     </div>
 
     <!--中间内容-->
-    <div class="middle-container"></div>
+    <div class="middle-container" id="mc-videos">
+
+        <h1> 视频s</h1>
+
+    </div>
+    <div class="middle-container" id="mc-what">
+
+        <h1> 这啥</h1>
+
+    </div>
+    <div class="middle-container" id="mc-us">
+
+        <h1>关于我们</h1>
+    </div>
 
     <!--下部分内容-->
     <div class="footer-container">

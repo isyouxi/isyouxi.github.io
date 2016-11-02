@@ -5,25 +5,35 @@
 var curr_Window_height;
 var curr_Window_with;
 
+var curr_fit_mobile_nav_with;
+
 var currScreenMode = '';//large,small
+
 
 function init() {
     // curr_Window_height = screen.availHeight;  //- 可用的屏幕宽度
     // curr_Window_with = screen.availWidth;// - 可用的屏幕高度
     curr_Window_with = document.body.clientWidth;
     curr_Window_height = document.body.clientHeight;
+
+
+    curr_fit_mobile_nav_with = curr_Window_with * 0.9;
+
     updateScreenSet();
     setClick();
     setVerticalBar();
+    setNarClick();
+
 }
 
 
-function updateVerticalBar()
-{
+function updateVerticalBar() {
     if (currScreenMode != 'small') {
         $('.nav-vertical-bar').show();
         $('.mobile-nav-vertical-bar').hide();
     } else {
+        console.log("curr_fit_mobile_nav_with:", curr_fit_mobile_nav_with);
+        $('#mobile-nav-vertical-bar-ul').css('width', curr_fit_mobile_nav_with + "px");
         $('.mobile-nav-vertical-bar').show();
         $('.nav-vertical-bar').hide();
     }
@@ -38,6 +48,7 @@ function setVerticalBar() {
         navs_a.mousemove(function () {
             $(this).children("div.li-dot").hide();
             $(this).children("div.li-label").show();
+
         });
 
         navs_a.mouseleave(function () {
@@ -88,6 +99,10 @@ function setClick() {
 function sizeChange() {
     curr_Window_with = document.body.clientWidth;
     curr_Window_height = document.body.clientHeight;
+
+    curr_fit_mobile_nav_with = curr_Window_with * 0.9;
+
+    $('#mobile-nav-vertical-bar-ul').css('width', curr_fit_mobile_nav_with + "px");
     updateScreenSet();
 }
 
@@ -105,6 +120,7 @@ function updateScreenSet() {
         return;
     }
 
+
     //菜单bar更新
     if (currScreenMode == 'large') {
         $('.mobile-top-bar').hide();
@@ -114,6 +130,7 @@ function updateScreenSet() {
         $('.mobile-top-bar').show();
         $('.normal-top-bar').hide();
     }
+
 
     updateVerticalBar();
 }

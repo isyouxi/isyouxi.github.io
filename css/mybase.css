@@ -96,8 +96,28 @@ ul {
 }
 
 .middle-container {
-    background: #6f6f6f;
-    height: 800px;
+
+}
+
+#mc-videos {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    background: yellowgreen;
+}
+
+#mc-what {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    background: royalblue;
+}
+
+#mc-us {
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    background: yellow;
 }
 
 .footer-container {
@@ -160,7 +180,6 @@ ul {
     width: 25px;
     height: 25px;
 }
-
 
 /*end  */
 
