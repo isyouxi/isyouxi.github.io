@@ -27,6 +27,7 @@ ul {
     padding-bottom: 8px;
     position: relative;
     overflow-y: hidden;
+    display: none;
 }
 
 .mobile-top-bar .item:first-child {
