@@ -84,7 +84,7 @@ function setVerticalBar() {
 }
 
 function setClick() {
-    /** 菜单点击 **/
+    /** 移动TOP右边菜单点击展开和缩放 **/
     $("#item-menus").click(function () {
         console.log("onclick");
 
