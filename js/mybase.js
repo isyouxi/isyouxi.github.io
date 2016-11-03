@@ -63,6 +63,7 @@ function setVerticalBar() {
         if (!child_ul.is(":hidden")) {
             child_ul.hide();
             $('#mobile-nav-vertical-bar-menu img').attr("src", './image/menu.png');
+            $('#mobile-nav-vertical-bar-menu img').css({"width": '24px', "height": "24px"});
             $('#mobile-nav-vertical-bar-menu').css('background', '#fff');
         }
 
@@ -73,10 +74,12 @@ function setVerticalBar() {
         if (bar.is(":hidden")) {
             //换成menu
             $(this).children('img').attr({'src': './image/menu.png'});
+            $('#mobile-nav-vertical-bar-menu img').css({"width": '24px', "height": "24px"});
             $(this).css('background', '#fff');
         } else {
             //换成close
             $(this).children('img').attr({'src': './image/close.png'});
+            $('#mobile-nav-vertical-bar-menu img').css({"width": '15px', "height": "15px"});
             $(this).css('background', 'transparent');
         }
     });
