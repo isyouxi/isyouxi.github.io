@@ -1,6 +1,6 @@
 
 * {
-    background-color: rgba(0, 0, 0, 0.05);
+    /*background-color: rgba(0, 0, 0, 0.05);*/
     margin: 0;
     padding: 0;
 }
@@ -140,7 +140,7 @@ ul {
 .normal-top-bar-right a:visited /*定义已访问过链接的样式*/
 {
 
-    padding: 0px 16px;
+    padding: 10px 16px;
     color: #fff;
     font-weight: bold;
     font-family: arial, sans-serif;
