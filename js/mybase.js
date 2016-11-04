@@ -23,6 +23,106 @@ function init() {
     setClick();
     setVerticalBar();
 
+    setscroll();
+}
+
+
+/** 主页的百分占比 **/
+var percentage_scroll_home;
+/** 视频的百分占比 **/
+var percentage_scroll_videos;
+/** What的百分占比 **/
+var percentage_scroll_what;
+
+var curr_scroll_position;
+
+var all_screen_height;
+
+function setscroll() {
+
+    all_screen_height = $(document).height() - $(window).height();
+
+    var body_height = $('body').height();
+
+    percentage_scroll_home = $('.header-container').height() / body_height;
+    percentage_scroll_videos = $('#mc-videos').height() / body_height + percentage_scroll_home;
+    percentage_scroll_what = $('#mc-what').height() / body_height + percentage_scroll_videos;
+
+    $(this).scroll(function (s) {
+
+        var curr_Percentage = $(window).scrollTop() / all_screen_height;
+
+        var c_position;
+
+        if (curr_Percentage < percentage_scroll_home) {
+
+            //home
+            // console.log("滑动到了home");
+            // console.log("curr_Percentage:" + curr_Percentage);
+
+            c_position = 1;
+        } else if (curr_Percentage < percentage_scroll_videos) {
+            //视频
+            // console.log("滑动到了视频");
+            // console.log("curr_Percentage:" + curr_Percentage);
+
+            c_position = 2;
+        } else if (curr_Percentage < percentage_scroll_what) {
+            //WAHT
+            // console.log("滑动到了WAHT");
+            // console.log("curr_Percentage:" + curr_Percentage);
+            c_position = 3;
+        } else {
+            //关于我们
+            // console.log("滑动到了关于我们");
+            // console.log("curr_Percentage:" + curr_Percentage);
+            c_position = 4;
+        }
+
+        if (curr_scroll_position != c_position) {
+            curr_scroll_position = c_position;
+            //更新条目
+            updateNormalVerticalBarStatus();
+            updateMobileVerticalBarStatus();
+        }
+    });
+}
+
+
+function scollTo(numb) {
+
+    var scrollTo = function (position) {
+        $('body').animate({
+                scrollTop: position
+            }, 800
+        );
+    }
+
+    if (numb == 1) {
+        scrollTo(0, 800);
+    } else if (numb == 2) {
+        scrollTo(percentage_scroll_videos * all_screen_height, 800);
+    } else if (numb == 3) {
+        scrollTo(percentage_scroll_what * all_screen_height, 800);
+    } else {
+        scrollTo(curr_scroll_position * all_screen_height, 800);
+    }
+}
+
+
+function updateNormalVerticalBarStatus() {
+
+    $('[data-number]').each(function () {
+        if ($(this).attr("data-number") == curr_scroll_position) {
+            $(this).children().css({'background': '#e778f6'});
+        } else {
+            $(this).children().css({'background': '#31fddf'});
+        }
+    });
+}
+
+function updateMobileVerticalBarStatus() {
+    //TODO
 }
 
 

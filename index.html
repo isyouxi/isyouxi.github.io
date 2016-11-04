@@ -56,10 +56,10 @@
             <a class="item" href="#"><img src="icons/apple-touch-icon.png" style="width: 32px;height: 32px"></a>
         </div>
         <div class="normal-top-bar-right">
-            <a class="item" href="#">首页</a>
-            <a class="item" href="#mc-videos">视频</a>
-            <a class="item" href="#mc-what">这啥</a>
-            <a class="item" href="#mc-us">关于我们</a>
+            <a class="item" onclick="scollTo(1)">首页</a>
+            <a class="item" onclick="scollTo(2)">视频</a>
+            <a class="item" onclick="scollTo(3)">这啥</a>
+            <a class="item" onclick="scollTo(4)">关于我们</a>
         </div>
     </div>
 
@@ -68,22 +68,22 @@
     <div class="mobile-nav-vertical-bar">
         <ul id="mobile-nav-vertical-bar-ul">
             <li class="mobile-nav-li">
-                <a href="#">
+                <a onclick="scollTo(1)">
                     首页
                 </a>
             </li>
             <li class="mobile-nav-li">
-                <a href="#mc-videos">
+                <a onclick="scollTo(2)">
                     视频
                 </a>
             </li>
             <li class="mobile-nav-li">
-                <a href="#mc-what">
+                <a onclick="scollTo(3)">
                     这啥
                 </a>
             </li>
             <li class="mobile-nav-li">
-                <a href="#mc-us">
+                <a onclick="scollTo(4)">
                     关于我们
                 </a>
             </li>
@@ -98,31 +98,30 @@
     <div class="nav-vertical-bar">
 
         <div class="bar-li">
-            <a href="#" data-number="1">
+            <a onclick="scollTo(1)" data-number="1">
                 <div class="li-dot"></div>
                 <div class="li-label">首页</div>
             </a>
 
         </div>
         <div class="bar-li">
-            <a href="#mc-videos" data-number="2">
+            <a onclick="scollTo(2)" data-number="2">
                 <div class="li-dot"></div>
                 <div class="li-label">视频</div>
             </a>
         </div>
         <div class="bar-li">
-            <a href="#mc-what" data-number="3">
+            <a onclick="scollTo(3)" data-number="3">
                 <div class="li-dot"></div>
                 <div class="li-label">这啥</div>
             </a>
         </div>
         <div class="bar-li">
-            <a href="#mc-us" data-number="4">
+            <a onclick="scollTo(4)" data-number="4">
                 <div class="li-dot"></div>
                 <div class="li-label">关于我们</div>
             </a>
         </div>
-
     </div>
 
 
