@@ -22,10 +22,14 @@ function init() {
     updateScreenSet();
     setClick();
     setVerticalBar();
-
     setscroll();
+
+    initPlayer();
 }
 
+function initPlayer() {
+
+};
 
 /** 主页的百分占比 **/
 var percentage_scroll_home;
