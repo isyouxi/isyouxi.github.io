@@ -2,167 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>STORE</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
-    <link rel="icon" href="icons/favicon.png"
-          type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180"
-          href="icons/apple-touch-icon.png">
-    <title>mytitle</title>
+    <meta name="viewport" content="width=device-width, user-scalabel=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <meta name="description" content="mytitle">
+    <link href="tabbar/tabbar.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
 
-<meta property="wb:webmaster" content="87b06e546bc7a93d" />
-    <!-- 引入这些文件至 <head> 中 -->
-    <link rel="stylesheet" href="./css/mybase.css">
-
+    <script src="other/jquery-3.1.1.js"></script>
+    <script src="index.js"></script>
+    <script src="tabbar/tabbar.js"></script>
+    <script>
+        window.onload=function () {
+            var bodyWidth=document.body.clientWidth;
+            indexLoad(bodyWidth);
+        }
+    </script>
 
 </head>
+<body onresize="indexBodySizeChangeX()" style="overflow-x: hidden">
 
-
-<body style="overflow-x: hidden" onload="init()" onResize="sizeChange()">
-
-<div class="all-wrap">
-
-
-    <!--移动端的上部分导航-->
-    <div class="mobile-top-bar">
-        <div class="item">
-            <img src="icons/apple-touch-icon.png" style="width: 24px;height: 24px">
+<div id="mainDiv" style="position: relative;">
+    <div id="top_tltle" class="clear">
+        <div id="top_img"></div>
+        <div id="index_title">
+            <ul id="top_tltle_ul">
+                <li class="active">
+                    <a>STORE</a>
+                </li>
+                <li>
+                    <a href="about/about.html" target="_blank">ABOUT</a>
+                </li>
+                <li>
+                    <a href="videos/videos.html" target="_blank">VIDEOS</a>
+                </li>
+                <li>
+                    <a href="press/press.html" target="_blank">ARTICLE</a>
+                </li>
+            </ul>
         </div>
-        <div class="item" id="item-menus">
-            <img src="icons/menu_white.png" style="width: 24px;height: 24px">
+        <div id="index_title_more">
+
         </div>
     </div>
+    <div id="div1">
+        <img id="div1_img1" src="img/icon-index_bg.png"/>
+        <img id="div1_img2" src="img/icon-index-log.png"/>
+    </div>
+    <div id="div2">
+        <ul id="food_ul" class="clear">
 
-    <div class="top-bar-aside">
-        <ul id="menu-top-nav" class="off-canvas-list">
-            <li id="menu-item-1" class="menu-item">
-                <a href="#">首页</a>
-
-            </li>
-            <li id="menu-item-2" class="menu-item">
-                <a href="#">视频</a></li>
-            <li id="menu-item-23" class="menu-item">
-                <a href="#">这啥</a></li>
-            <li id="menu-item-22" class="menu-item">
-                <a href="#">关于我们</a></li>
         </ul>
     </div>
-
-    <!--正常网页的上部分导航-->
-    <div class="normal-top-bar">
-        <div class="normal-top-bar-left">
-            <a class="item" href="#"><img src="icons/apple-touch-icon.png" style="width: 32px;height: 32px"></a>
+    <div id="div3">
+        <div id="follow_first">
+            <div class="follow_div0"></div>
+            <p class="follow_p1">669246</p>
+            <p class="follow_p2">微博粉丝</p>
+            <div class="follow_div">关注</div>
         </div>
-        <div class="normal-top-bar-right">
-            <a class="item" onclick="scollTo(1)">首页</a>
-            <a class="item" onclick="scollTo(2)">视频</a>
-            <a class="item" onclick="scollTo(3)">这啥</a>
-            <a class="item" onclick="scollTo(4)">关于我们</a>
+        <div class="follow_line">
+
+        </div>
+        <div id="follow_second">
+            <div class="follow_div0"></div>
+            <p class="follow_p1">669246</p>
+            <p class="follow_p2">优酷粉丝</p>
+            <div class="follow_div">订阅</div>
         </div>
     </div>
+    <div id="div4">
+        <ul id="index_video_ul" class="clear">
 
+        </ul>
+        <div id="index_video_more_div">more</div>
+    </div>
+    <div id="div5">
+        <div class="null_div"></div>
+        <p class="acticle_title">最新文章</p>
+        <p class="acticle_content">The paranoia is in bloom the PR The transmissions will resume</p>
+        <ul id="index_article" class="clear">
 
-    <!-- 移动端的垂直方向的导航 -->
-    <div class="mobile-nav-vertical-bar">
-        <ul id="mobile-nav-vertical-bar-ul">
-            <li class="mobile-nav-li">
-                <a onclick="scollTo(1)">
-                    首页
-                </a>
+        </ul>
+    </div>
+    <div id="div6" class="clear">
+        <div class="null_div"></div>
+        <ul class="clear">
+            <li>
+                <div class="div6_content4"></div>
             </li>
-            <li class="mobile-nav-li">
-                <a onclick="scollTo(2)">
-                    视频
-                </a>
+            <li>
+                <div class="div6_content3"></div>
             </li>
-            <li class="mobile-nav-li">
-                <a onclick="scollTo(3)">
-                    这啥
-                </a>
+            <li>
+                <div class="div6_content2"></div>
             </li>
-            <li class="mobile-nav-li">
-                <a onclick="scollTo(4)">
-                    关于我们
-                </a>
+            <li>
+                <div class="div6_content1"></div>
             </li>
         </ul>
-
-        <div id="mobile-nav-vertical-bar-menu">
-            <img src="./image/menu.png">
-        </div>
+        <div class="img_div"></div>
+        <p>张逗张花文化传播有限公司</p>
     </div>
-
-    <!--普通网页的垂直导航-->
-    <div class="nav-vertical-bar">
-
-        <div class="bar-li">
-            <a onclick="scollTo(1)" data-number="1">
-                <div class="li-dot"></div>
-                <div class="li-label">首页</div>
-            </a>
-
-        </div>
-        <div class="bar-li">
-            <a onclick="scollTo(2)" data-number="2">
-                <div class="li-dot"></div>
-                <div class="li-label">视频</div>
-            </a>
-        </div>
-        <div class="bar-li">
-            <a onclick="scollTo(3)" data-number="3">
-                <div class="li-dot"></div>
-                <div class="li-label">这啥</div>
-            </a>
-        </div>
-        <div class="bar-li">
-            <a onclick="scollTo(4)" data-number="4">
-                <div class="li-dot"></div>
-                <div class="li-label">关于我们</div>
-            </a>
-        </div>
-    </div>
-
-
-    <!--头部分内容-->
-    <div class="header-container">
-        <img src="./image/image.jpg">
-        <div class="header-shadow">
-
-        </div>
-    </div>
-
-    <!--中间内容-->
-    <div class="middle-container" id="mc-videos">
-        <iframe height=320 width=510 src='http://player.youku.com/embed/XMTQxMDQxMDY2NA==' frameborder=0
-                allowfullscreen></iframe>
-    </div>
-    <div class="middle-container" id="mc-what">
-
-        <h1> 这啥</h1>
-
-    </div>
-    <div class="middle-container" id="mc-us">
-
-        <h1>关于我们</h1>
-    </div>
-
-    <!--下部分内容-->
-    <div class="footer-container">
-        <p class="copyright">
-            © 2016 Dude Perfect, LLC et al. All rights reserved
-            © 2016 Dude Perfect, LLC et al. All rights reserved
-            © 2016 Dude Perfect, LLC et al. All rights reserved
-        </p>
+    <div id="main_left">
+        <ul>
+            <li class="clear">
+                <span>span1</span>
+                <div class="main_left_div main_left_active"></div>
+            </li>
+            <li class="clear">
+                <span>span2</span>
+                <div class="main_left_div"></div>
+            </li>
+            <li class="clear">
+                <span>span3</span>
+                <div class="main_left_div"></div>
+            </li>
+            <li class="clear">
+                <span>span4</span>
+                <div class="main_left_div"></div>
+            </li>
+            <li class="clear">
+                <span>span4</span>
+                <div class="main_left_div"></div>
+            </li>
+        </ul>
     </div>
 </div>
 
-
-<a class="exit-off-canvas"></a>
-</div>
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="./other/projekktor-1.3.09.js"></script>
-<script src="./js/mybase.js"></script>
 </body>
 </html>

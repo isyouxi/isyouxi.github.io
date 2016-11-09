@@ -1,0 +1,172 @@
+
+body,ul,span,p,h5,h2{
+    margin: 0px;
+    padding: 0px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    vertical-align: top;
+}
+
+.clear:after{content:'';display:block;clear:both;}
+
+.clear{zoom:1;}
+
+#index_title{
+    text-align: center;
+    clear: both;
+    height: 64px;
+    line-height: 64px;
+    position: absolute;
+    z-index: 2;
+}
+
+#top_tltle{
+    float: left;
+}
+
+#top_img{
+    width: 48px;
+    height: 48px;
+    background: url("../img/index.png") 0px -176px;
+    margin-top: 36px;
+    margin-left: 36px;
+}
+
+#top_tltle_ul{
+    height: 48px;
+}
+
+#top_tltle_ul li{
+    padding: 0 16px;
+    float: left;
+    height: 48px;
+    line-height: 48px;
+}
+
+#index_title li:hover{
+    animation: animation-title-show 0.3s;
+    -moz-animation: animation-title-show 0.3s;
+    -webkit-animation:animation-title-show 0.3s;
+    -o-animation: animation-title-show 0.3s;
+    background-color: rgba(153,153,153,0.5);
+}
+
+#index_title .active{
+    float: left;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: white;
+    font-size: 18px;
+    line-height: 48px;
+    border-radius: 0px;
+    border-bottom: 3px solid green;
+}
+
+#index_title .active:hover{
+    animation: animation-title-active-show 0.3s;
+    -moz-animation: animation-title-active-show 0.3s;
+    -webkit-animation: animation-title-active-show 0.3s;
+    -o-animation: animation-title-active-show 0.3s;
+    background-color: rgba(249,203,248,0.5);
+    border-bottom: 3px solid green;
+}
+
+#index_title a{
+    color: white;
+}
+
+@keyframes animation-title-show {
+    0% {
+        background-color: rgba(153,153,153,0);
+    }
+    100% {
+        background-color: rgba(153,153,153,0.5);
+    }
+}
+
+@-moz-keyframes animation-title-show /* Firefox */
+{
+    0% {
+        background-color: rgba(153,153,153,0);
+    }
+    100% {
+        background-color: rgba(153,153,153,0.5);
+    }
+}
+
+@-webkit-keyframes animation-title-show /* Safari 和 Chrome */
+{
+    0% {
+        background-color: rgba(153,153,153,0);
+    }
+    100% {
+        background-color: rgba(153,153,153,0.5);
+    }
+}
+
+@-o-keyframes animation-title-show /* Opera */
+{
+    0% {
+        background-color: rgba(153,153,153,0);
+    }
+    100% {
+        background-color: rgba(153,153,153,0.5);
+    }
+}
+
+@keyframes animation-title-active-show {
+    0% {
+        background-color: rgba(249,203,248,0);
+    }
+    100% {
+        background-color: rgba(249,203,248,0.5);
+    }
+}
+
+@-moz-keyframes animation-title-active-show /* Firefox */
+{
+    0% {
+        background-color: rgba(249,203,248,0);
+    }
+    100% {
+        background-color: rgba(249,203,248,0.5);
+    }
+}
+
+@-webkit-keyframes animation-title-active-show /* Safari 和 Chrome */
+{
+    0% {
+        background-color: rgba(249,203,248,0);
+    }
+    100% {
+        background-color: rgba(249,203,248,0.5);
+    }
+}
+
+@-o-keyframes animation-title-active-show /* Opera */
+{
+    0% {
+        background-color: rgba(249,203,248,0);
+    }
+    100% {
+        background-color: rgba(249,203,248,0.5);
+    }
+}
+
+#index_title_more{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 44px;
+    right: 0px;
+    background: url("../img/index.png") 0px -16px;
+}
