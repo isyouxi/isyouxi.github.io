@@ -170,3 +170,28 @@ img{
     right: 0px;
     background: url("../img/index.png") 0px -16px;
 }
+
+#mainLeftDiv{
+    background-color: #31fddf;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+#index_left{
+    width: 120px;
+    background-color: #31fddf;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 100%;
+}
+
+#left_ul li{
+    height: 40px;
+    line-height: 40px;
+}
+
+#left_ul span{
+    margin-left: 12px;
+}

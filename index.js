@@ -5,6 +5,7 @@
 var bodyWidth=0;
 
 function indexLoad(width0) {
+    bodyWidth=width0;
     $("#main_left li").hover(function () {
         var oSpan=this.getElementsByTagName("span")[0];
         oSpan.style.display="block";
@@ -21,12 +22,24 @@ function indexLoad(width0) {
     loadActicleData();
     loadVideoData();
     indexBodySizeChangeX();
+    $("#index_title_more").click(function () {
+        $("#mainDiv").animate({left:"-120px"});
+        $("#mainLeftDiv").animate({left:bodyWidth-120+"px"});
+    });
+    $("#mainDiv").click(function () {
+        if (parseInt($("#mainDiv").css("left"))<0){
+            $("#mainDiv").animate({left:"0"});
+            $("#mainLeftDiv").animate({left:bodyWidth+"px"});
+        }
+    });
+    $("#mainLeftDiv").css("height",$("#mainDiv").css("height"));
 }
 
 function indexBodySizeChangeX() {
     bodyWidth=document.body.clientWidth;
     changeTabbarFrame(bodyWidth);
-
+    $("#mainDiv").css("left","0");
+    $("#mainLeftDiv").css("left",bodyWidth+"px");
     if (bodyWidth<640){
         $("#main_left").css("display","none");
         $("#div1_img1").css("width",bodyWidth+"px");
@@ -52,6 +65,7 @@ function indexBodySizeChangeX() {
     }
     var img1Height=parseInt($("#div1_img1").css("height"));
     $("#div1_img2").css("marginTop",-((img1Height+parseInt($("#div1_img2").css("height")))/2)+"px");
+    $("#mainLeftDiv").css("height",$("#mainDiv").css("height"));
 }
 
 function loadFoodData() {
@@ -219,6 +233,9 @@ function changePhoneVideoFrameX() {
     }else {
         liWidth=180;
     }
+    $("#index_video_ul").css({
+            marginLeft:"8px"
+    });
     $("#index_video_ul").css("width",(liWidth+20)*2+"px");
 
     $("#index_video_ul li").css({
@@ -243,8 +260,14 @@ function changeInternetVideoFrameX() {
     var liWidth=0;
     if (bodyWidth<=1216){
         liWidth=(bodyWidth-176)/3;
+        $("#index_video_ul").css({
+            marginLeft:"8px"
+        })
     }else {
         liWidth=360;
+        $("#index_video_ul").css({
+            marginLeft:(bodyWidth-1200)/2+"px"
+        })
     }
     $("#index_video_ul").css("width",(liWidth+40)*3+"px");
     $("#index_video_ul li").css({
@@ -372,11 +395,13 @@ function changePhoneActicleFrameX() {
         width:bodyWidth-48+"px",
     });
     $(".titleP").css({
-        marginLeft:"70px"
+        marginLeft:"70px",
+        fontSize:"16px"
     });
     $(".contentP").css({
         marginLeft:"70px",
-        marginBottom:"24px"
+        marginBottom:"24px",
+        fontSize:"12px"
     });
     $(".acticleA").css({
         marginLeft:"70px"
@@ -423,11 +448,13 @@ function changeInternetActicleFrameX() {
         width:(bodyWidth-96)/2+"px",
     });
     $(".titleP").css({
-        marginLeft:"114px"
+        marginLeft:"114px",
+        fontSize:"28px"
     });
     $(".contentP").css({
         marginLeft:"114px",
-        marginBottom:"48px"
+        marginBottom:"48px",
+        fontSize:"24px"
     });
     $(".acticleA").css({
         marginLeft:"114px"
